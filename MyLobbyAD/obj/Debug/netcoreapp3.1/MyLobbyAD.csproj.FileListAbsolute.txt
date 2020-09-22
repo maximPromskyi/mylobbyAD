@@ -35,5 +35,6 @@ C:\Users\maxim.promskyi\Source\Repos\mylobbyAD\MyLobbyAD\bin\Debug\netcoreapp3.1
 C:\Users\maxim.promskyi\Source\Repos\mylobbyAD\MyLobbyAD\bin\Debug\netcoreapp3.1\System.DirectoryServices.Protocols.dll
 C:\Users\maxim.promskyi\Source\Repos\mylobbyAD\MyLobbyAD\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.AccountManagement.dll
 C:\Users\maxim.promskyi\Source\Repos\mylobbyAD\MyLobbyAD\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
-C:\Users\maxim.promskyi\Source\Repos\mylobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.csproj.CoreCompileInputs.cache
 C:\Users\maxim.promskyi\Source\Repos\mylobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.csproj.CopyComplete
+C:\Users\maxim.promskyi\Source\Repos\mylobbyAD\MyLobbyAD\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\maxim.promskyi\Source\Repos\mylobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.csproj.CoreCompileInputs.cache

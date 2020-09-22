@@ -24,9 +24,9 @@ namespace MyLobbyAD
             string usernameAD = "maxim.promskyi@mymedia.local";
             string passwordAD = "CodeCarePro1@";
             if (url.Text == "a" && username.Text == "s" && password.Text == "d") {
-                ActiveDirectoryForm activeDirectory = new ActiveDirectoryForm();
-                activeDirectory.Show();
-                this.Hide();
+               // ActiveDirectoryForm activeDirectory = new ActiveDirectoryForm();
+               // activeDirectory.Show();
+              //  this.Hide();
             }
         }
     }

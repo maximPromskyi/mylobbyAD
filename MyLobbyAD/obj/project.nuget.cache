@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "3c9uK2suyQMkQ05JnIxKfwJyR//5CqfWxa/GoEK0EnajzKDbPXg8BdTqSImQSAX+NtwaIHvlVJJNlh4Wn3a1MA==",
+  "dgSpecHash": "re83M9FQtOh4oHTjZkINxAzPijUDk2MTZBi2lFDutwy84l7DWKK3PD74Y8V/ZFDv8nhwAF9+/8L1gZV4uUJA8g==",
   "success": true,
   "projectFilePath": "C:\\Users\\maxim.promskyi\\Source\\Repos\\mylobbyAD\\MyLobbyAD\\MyLobbyAD.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maxim.promskyi\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\maxim.promskyi\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\maxim.promskyi\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\maxim.promskyi\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\maxim.promskyi\\.nuget\\packages\\system.directoryservices\\4.7.0\\system.directoryservices.4.7.0.nupkg.sha512",
     "C:\\Users\\maxim.promskyi\\.nuget\\packages\\system.directoryservices.accountmanagement\\4.7.0\\system.directoryservices.accountmanagement.4.7.0.nupkg.sha512",
