@@ -1,0 +1,17 @@
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\bin\Debug\netcoreapp3.1\MyLobbyAD.exe
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\bin\Debug\netcoreapp3.1\MyLobbyAD.deps.json
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\bin\Debug\netcoreapp3.1\MyLobbyAD.runtimeconfig.json
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\bin\Debug\netcoreapp3.1\MyLobbyAD.runtimeconfig.dev.json
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\bin\Debug\netcoreapp3.1\MyLobbyAD.dll
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\bin\Debug\netcoreapp3.1\MyLobbyAD.pdb
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.csprojAssemblyReference.cache
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.LoginAD.resources
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.LoginForm.resources
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.csproj.GenerateResource.cache
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.AssemblyInfoInputs.cache
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.AssemblyInfo.cs
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.csproj.CoreCompileInputs.cache
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.dll
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.pdb
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.genruntimeconfig.cache
+C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.ActiveDirectoryForm.resources
