@@ -1,8 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "QNVgGoIW2eVLCIGgJIo1KhwhGYbgJKfEifrIJ6QkKle8GUfu4DMohrVfe729r5ZlIAMNBb0QZIHp7D4lCBF3wQ==",
+  "dgSpecHash": "3c9uK2suyQMkQ05JnIxKfwJyR//5CqfWxa/GoEK0EnajzKDbPXg8BdTqSImQSAX+NtwaIHvlVJJNlh4Wn3a1MA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Andrey\\source\\repos\\MyLobbyAD\\MyLobbyAD\\MyLobbyAD.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\maxim.promskyi\\Source\\Repos\\mylobbyAD\\MyLobbyAD\\MyLobbyAD.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\maxim.promskyi\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\maxim.promskyi\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\maxim.promskyi\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
+    "C:\\Users\\maxim.promskyi\\.nuget\\packages\\system.directoryservices\\4.7.0\\system.directoryservices.4.7.0.nupkg.sha512",
+    "C:\\Users\\maxim.promskyi\\.nuget\\packages\\system.directoryservices.accountmanagement\\4.7.0\\system.directoryservices.accountmanagement.4.7.0.nupkg.sha512",
+    "C:\\Users\\maxim.promskyi\\.nuget\\packages\\system.directoryservices.protocols\\4.7.0\\system.directoryservices.protocols.4.7.0.nupkg.sha512",
+    "C:\\Users\\maxim.promskyi\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\maxim.promskyi\\.nuget\\packages\\system.io.filesystem.accesscontrol\\4.7.0\\system.io.filesystem.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\maxim.promskyi\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\maxim.promskyi\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.7.0\\system.security.cryptography.protecteddata.4.7.0.nupkg.sha512",
+    "C:\\Users\\maxim.promskyi\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
+    "C:\\Users\\maxim.promskyi\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\maxim.promskyi\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

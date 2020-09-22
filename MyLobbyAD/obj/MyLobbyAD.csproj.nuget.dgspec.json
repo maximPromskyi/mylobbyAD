@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andrey\\source\\repos\\MyLobbyAD\\MyLobbyAD\\MyLobbyAD.csproj": {}
+    "C:\\Users\\maxim.promskyi\\Source\\Repos\\mylobbyAD\\MyLobbyAD\\MyLobbyAD.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andrey\\source\\repos\\MyLobbyAD\\MyLobbyAD\\MyLobbyAD.csproj": {
+    "C:\\Users\\maxim.promskyi\\Source\\Repos\\mylobbyAD\\MyLobbyAD\\MyLobbyAD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andrey\\source\\repos\\MyLobbyAD\\MyLobbyAD\\MyLobbyAD.csproj",
+        "projectUniqueName": "C:\\Users\\maxim.promskyi\\Source\\Repos\\mylobbyAD\\MyLobbyAD\\MyLobbyAD.csproj",
         "projectName": "MyLobbyAD",
-        "projectPath": "C:\\Users\\Andrey\\source\\repos\\MyLobbyAD\\MyLobbyAD\\MyLobbyAD.csproj",
-        "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andrey\\source\\repos\\MyLobbyAD\\MyLobbyAD\\obj\\",
+        "projectPath": "C:\\Users\\maxim.promskyi\\Source\\Repos\\mylobbyAD\\MyLobbyAD\\MyLobbyAD.csproj",
+        "packagesPath": "C:\\Users\\maxim.promskyi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maxim.promskyi\\Source\\Repos\\mylobbyAD\\MyLobbyAD\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\maxim.promskyi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -42,6 +37,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "System.DirectoryServices.AccountManagement": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -60,7 +61,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
