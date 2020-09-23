@@ -18,6 +18,8 @@ namespace MyLobbyAD
         public ActiveDirectoryForm(LoginSuccess loginSuccess)
         {
             InitializeComponent();
+            domainLabel.Text = ActiveDirectory.GetDomain();
+            emailLabel.Text = AccounService.GetMail();
         }
 
         private async void Upload_Click(object sender, EventArgs e)
@@ -58,9 +60,9 @@ namespace MyLobbyAD
                 }
                 
             }
-            MessageBox.Show(usersUpdateData, "updated");
+            // MessageBox.Show(usersUpdateData, "updated");
             MessageBox.Show(usersData, "created");
-            MessageBox.Show(usersError, "error");
+            // MessageBox.Show(usersError, "error");
 
         }
     }

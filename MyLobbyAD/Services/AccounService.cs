@@ -21,5 +21,10 @@ namespace MyLobbyAD.Services
             AccountId = loginSuccess?.UserId;
             Ttl = loginSuccess?.Ttl;
         }
+        public static string GetMail()
+        {
+            return  AccounService.Email == null ? "unknown" : AccounService.Email;
+;
+        }
     }
 }
