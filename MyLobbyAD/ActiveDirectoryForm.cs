@@ -9,68 +9,59 @@ using System.DirectoryServices.AccountManagement;
 using System.DirectoryServices;
 using MyLobbyAD.Models;
 using System.Linq;
+using MyLobbyAD.Services;
 
 namespace MyLobbyAD
 {
     public partial class ActiveDirectoryForm : Form
     {
-
-        public ActiveDirectoryForm(PrincipalSearcher searcher)
+        public ActiveDirectoryForm(LoginSuccess loginSuccess)
         {
             InitializeComponent();
-            InitializeComponentAD(searcher);
-            List<User> users = GetUsers(searcher);
         }
 
-        private void Upload_Click(object sender, EventArgs e)
+        private async void Upload_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Success!");
-        }
-        private List<User> GetUsers(PrincipalSearcher searcher)
-        {
-            List<User> users = new List<User>();
-            List<UserPrincipal> usersData = searcher
-                .FindAll()
-                .Select(user => (UserPrincipal)user)
-                .ToList();
-
-            foreach (var user in usersData)
+            List<User> users = ActiveDirectory.GetUsers();
+            string[] usersId = users.Select(u => u.Id.ToString()).ToArray();
+            LoginInfoModel<EmployeeInfo[], LoginError> employeesInfo = await ApiService.CheckEmployeeById(usersId);
+            string usersData = "";
+            string usersUpdateData = "";
+            string usersError = "";
+            foreach (User user in users)
             {
-                DirectoryEntry dirEntry = (DirectoryEntry)user.GetUnderlyingObject();
-                string firstName = dirEntry?.Properties["GivenName"]?.Value?.ToString();
-
-                if (NameExist(firstName))
+                EmployeeInfo employeeInfo = employeesInfo.Success
+                    .Where(e => e.ActiveDirectoryId == user.Id.ToString())
+                    .FirstOrDefault();
+                if (employeeInfo.EmployeeId != null)
                 {
-                    users.Add(CreateUser(dirEntry));
-                }                
+                    user.EmployeeId = employeeInfo.EmployeeId;
+                    if (await ApiService.EmployeUpdate(user))
+                    {
+                        usersUpdateData += $"{user.Name}\n";
+                    }
+                    else
+                    {
+                        usersError += $"{user.Name}\n";
+                    }
+                }
+                else
+                {
+                    if (await ApiService.EmployeeAdd(user))
+                    {
+                        usersData += $"{user.Name}\n";
+                    }
+                    else
+                    {
+                        usersError += $"{user.Name}\n";
+                    }
+                }
+                
             }
+            MessageBox.Show(usersUpdateData, "updated");
+            MessageBox.Show(usersData, "created");
+            MessageBox.Show(usersError, "error");
 
-            return users;
-        }
-        private bool NameExist(string name)
-        {
-            return name != null;
-        }
-        private string GetFullName(string firstName, string lastName)
-        {
-            return lastName == null ? firstName : $"{firstName} {lastName}";
-        }
-        private User CreateUser(DirectoryEntry dirEntry)
-        {
-            return new User()
-            {
-                Name = GetFullName(dirEntry?.Properties["GivenName"]?.Value?.ToString(), dirEntry.Properties["sn"]?.Value?.ToString()),
-                Company = dirEntry.Properties["company"]?.Value?.ToString(),
-                JobTitle = dirEntry.Properties["title"]?.Value?.ToString(),
-                Email = dirEntry.Properties["mail"]?.Value?.ToString(),
-                PhoneSms = dirEntry.Properties["telephoneNumber"]?.Value?.ToString(),
-                PhoneVoice = dirEntry.Properties["telephoneNumber"]?.Value?.ToString()
-            };
-        }
-        private void InitializeComponentAD(PrincipalSearcher searcher)
-        {
-            string domainInfo = searcher?.Context?.Name;
-            domain.Text = searcher?.Context?.Name == null ? "unknown" : searcher.Context.Name;
         }
     }
 }

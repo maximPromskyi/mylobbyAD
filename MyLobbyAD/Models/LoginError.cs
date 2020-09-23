@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MyLobbyAD.Models
 {
-    class LoginError
+    public class LoginError
     {
         public string Name { get; set; }
         public string Message { get; set; }

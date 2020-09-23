@@ -27,48 +27,36 @@ namespace MyLobbyAD
             LoginInfoModel<LoginSuccess, LoginError> loginInfo = await ApiService.Login(email.Text, password.Text);
             if (loginInfo.Success != null)
             {
-                ConnectAD();
+                AccounService.CreateAccounService(loginInfo.Success);
+                ActiveDirectory.Connect();
 
-                if (Searcher != null)
+                if (ActiveDirectory.IsConnect)
                 {
-                    ActiveDirectoryForm activeDirectory = new ActiveDirectoryForm(Searcher);
-                    activeDirectory.Show();
-                    this.Hide();
+                    DisplayOtherForm(new ActiveDirectoryForm(loginInfo.Success));
                 }
                 else
                 {
-                    LoginAD loginAD = new LoginAD();
-                    loginAD.Show();
-                    this.Hide();
+                    DisplayOtherForm(new LoginAD());
                 }
             }
             else
             {
-                string messageErr = "Incorrect data";
-                if (loginInfo?.Error?.Message != null)
-                {
-                    messageErr = loginInfo?.Error?.Message;
-                }
-                DisplayError(messageErr);
+                DisplayError(loginInfo?.Error?.Message);
             }
+        }
+        private void DisplayOtherForm(Form otherForm)
+        {
+            otherForm.Show();
+            this.Hide();
         }
         private void DisplayError(string messageErr)
         {
+            if (messageErr == null)
+            {
+                messageErr = "Incorrect data";
+            }
             warning.Visible = true;
             warning.Text = messageErr;
-        }
-        private void ConnectAD()
-        {
-            try
-            {
-                Searcher = new PrincipalSearcher(
-                    new UserPrincipal(
-                        new PrincipalContext(ContextType.Domain, Environment.UserDomainName)));
-            }
-            catch
-            {
-                Searcher = null;
-            }
         }
     }
 }
