@@ -72,12 +72,5 @@ namespace MyLobbyAD
             SettingForm settingForm = new SettingForm(this);
             settingForm.Show();
         }
-
-        private void SwitchADButton_Click(object sender, EventArgs e)
-        {
-            LoginADForm loginADForm = new LoginADForm();
-            loginADForm.Show();
-            this.Close();
-        }
     }
 }

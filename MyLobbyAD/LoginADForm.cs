@@ -24,7 +24,7 @@ namespace MyLobbyAD
             string usernameAD = "maxim.promskyi@mymedia.local";
             string passwordAD = "CodeCarePro1@";*/
 
-            if (url.Text == "a" && username.Text == "s" && password.Text == "d")
+            if (url.Text == "ldap://mymedia.local" && username.Text == "maxim.promskyi@mymedia.local" && password.Text == "CodeCarePro1@")
             {
                 ActiveDirectoryForm activeDirectory = new ActiveDirectoryForm();
                 activeDirectory.Show();

@@ -37,5 +37,12 @@ namespace MyLobbyAD
             mainForm.Close();
             this.Close();
         }
+        private void SwitchADButton_Click(object sender, EventArgs e)
+        {
+            LoginADForm loginADForm = new LoginADForm();
+            loginADForm.Show();
+            mainForm.Close();
+            this.Close();
+        }
     }
 }
