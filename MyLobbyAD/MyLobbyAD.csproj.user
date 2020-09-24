@@ -5,10 +5,16 @@
     <Compile Update="ActiveDirectoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LoginAD.cs">
+    <Compile Update="LoginADForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SchedulerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

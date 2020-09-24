@@ -10,16 +10,17 @@ using System.DirectoryServices;
 using MyLobbyAD.Models;
 using System.Linq;
 using MyLobbyAD.Services;
+using MaterialSkin.Controls;
 
 namespace MyLobbyAD
 {
-    public partial class ActiveDirectoryForm : Form
+    public partial class ActiveDirectoryForm : MaterialForm
     {
-        public ActiveDirectoryForm(LoginSuccess loginSuccess)
+        public ActiveDirectoryForm(LoginSuccess loginSuccess = null)
         {
             InitializeComponent();
-            domainLabel.Text = ActiveDirectory.GetDomain();
-            emailLabel.Text = AccounService.GetMail();
+            username.Text = AccounService.Email == null ? "unknown" : AccounService.Email;
+            domainName.Text = ActiveDirectory.GetDomain();
         }
 
         private async void Upload_Click(object sender, EventArgs e)
@@ -64,6 +65,19 @@ namespace MyLobbyAD
             MessageBox.Show(usersData, "created");
             // MessageBox.Show(usersError, "error");
 
+        }
+
+        private void Setting_Click(object sender, EventArgs e)
+        {
+            SettingForm settingForm = new SettingForm(this);
+            settingForm.Show();
+        }
+
+        private void SwitchADButton_Click(object sender, EventArgs e)
+        {
+            LoginADForm loginADForm = new LoginADForm();
+            loginADForm.Show();
+            this.Close();
         }
     }
 }

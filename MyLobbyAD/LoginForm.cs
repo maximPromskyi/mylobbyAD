@@ -11,12 +11,13 @@ using System.DirectoryServices.AccountManagement;
 using System.DirectoryServices;
 using MyLobbyAD.Models;
 using MyLobbyAD.Services;
+using MaterialSkin.Controls;
+using MaterialSkin;
 
 namespace MyLobbyAD
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : MaterialForm
     {
-        private PrincipalSearcher Searcher { get; set; }
         public LoginForm()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace MyLobbyAD
                 }
                 else
                 {
-                    DisplayOtherForm(new LoginAD());
+                    DisplayOtherForm(new LoginADForm());
                 }
             }
             else
