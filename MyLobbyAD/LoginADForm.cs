@@ -9,6 +9,7 @@ using System.DirectoryServices.AccountManagement;
 using System.DirectoryServices;
 using System.Linq;
 using MaterialSkin.Controls;
+using MyLobbyAD.Services;
 
 namespace MyLobbyAD
 {
@@ -18,17 +19,24 @@ namespace MyLobbyAD
         {
             InitializeComponent();
         }
-        private void LoginButton_Click(object sender, EventArgs e)
+        private async void LoginButton_Click(object sender, EventArgs e)
         {
-            /* string urlAD = @"ldap://mymedia.local";
-            string usernameAD = "maxim.promskyi@mymedia.local";
-            string passwordAD = "CodeCarePro1@";*/
+            loader.Visible = true;
+            LoginButton.Text = "";
+            bool isConnect = await ActiveDirectory.Connect(domainName.Text, username.Text, password.Text);
 
-            if (url.Text == "ldap://mymedia.local" && username.Text == "maxim.promskyi@mymedia.local" && password.Text == "CodeCarePro1@")
+            if (isConnect)
             {
                 ActiveDirectoryForm activeDirectory = new ActiveDirectoryForm();
                 activeDirectory.Show();
                 this.Close();
+            }
+            else
+            {
+                warning.Text = "Invalid data";
+                warning.Visible = true;
+                loader.Visible = false;
+                LoginButton.Text = "Sign in";
             }
         }
     }

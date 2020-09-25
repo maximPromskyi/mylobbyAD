@@ -24,14 +24,15 @@ namespace MyLobbyAD
         }
 
         private async void LoginButton_Click(object sender, EventArgs e)
-        { 
+        {
+            LoginButton.Text = "";
+            loader.Visible = true;
             LoginInfoModel<LoginSuccess, LoginError> loginInfo = await ApiService.Login(email.Text, password.Text);
             if (loginInfo.Success != null)
             {
                 AccounService.CreateAccounService(loginInfo.Success);
-                ActiveDirectory.Connect();
-
-                if (ActiveDirectory.IsConnect)
+                bool isConnect = await ActiveDirectory.Connect();
+                if (isConnect)
                 {
                     DisplayOtherForm(new ActiveDirectoryForm(loginInfo.Success));
                 }
@@ -43,6 +44,8 @@ namespace MyLobbyAD
             else
             {
                 DisplayError(loginInfo?.Error?.Message);
+                LoginButton.Text = "Sign in";
+                loader.Visible = false;
             }
         }
         private void DisplayOtherForm(Form otherForm)

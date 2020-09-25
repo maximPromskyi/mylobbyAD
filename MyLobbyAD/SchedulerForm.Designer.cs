@@ -30,9 +30,10 @@ namespace MyLobbyAD
         private void InitializeComponent()
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
-            this.LoginButton = new MaterialSkin.Controls.MaterialButton();
+            this.TimeComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.Save = new MaterialSkin.Controls.MaterialButton();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.statusCheckbox = new MaterialSkin.Controls.MaterialCheckbox();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -42,67 +43,59 @@ namespace MyLobbyAD
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel1.Location = new System.Drawing.Point(40, 74);
+            this.materialLabel1.Location = new System.Drawing.Point(46, 99);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(170, 24);
             this.materialLabel1.TabIndex = 12;
             this.materialLabel1.Text = "Set update interval";
             // 
-            // materialComboBox1
+            // TimeComboBox
             // 
-            this.materialComboBox1.AutoResize = false;
-            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialComboBox1.Depth = 0;
-            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox1.DropDownHeight = 292;
-            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox1.DropDownWidth = 121;
-            this.materialComboBox1.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox1.FormattingEnabled = true;
-            this.materialComboBox1.Hint = "Select time";
-            this.materialComboBox1.IntegralHeight = false;
-            this.materialComboBox1.ItemHeight = 29;
-            this.materialComboBox1.Items.AddRange(new object[] {
-            "3 hours",
-            "6 hours",
-            "12 hours",
-            "day",
-            "week",
-            "two weeks",
-            "month"});
-            this.materialComboBox1.Location = new System.Drawing.Point(40, 118);
-            this.materialComboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.materialComboBox1.MaxDropDownItems = 10;
-            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(195, 35);
-            this.materialComboBox1.TabIndex = 11;
-            this.materialComboBox1.UseAccent = false;
-            this.materialComboBox1.UseTallSize = false;
+            this.TimeComboBox.AutoResize = false;
+            this.TimeComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TimeComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TimeComboBox.Depth = 0;
+            this.TimeComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.TimeComboBox.DropDownHeight = 292;
+            this.TimeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TimeComboBox.DropDownWidth = 121;
+            this.TimeComboBox.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.TimeComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.TimeComboBox.FormattingEnabled = true;
+            this.TimeComboBox.Hint = "Select time";
+            this.TimeComboBox.IntegralHeight = false;
+            this.TimeComboBox.ItemHeight = 29;
+            this.TimeComboBox.Location = new System.Drawing.Point(46, 157);
+            this.TimeComboBox.MaxDropDownItems = 10;
+            this.TimeComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.TimeComboBox.Name = "TimeComboBox";
+            this.TimeComboBox.Size = new System.Drawing.Size(222, 35);
+            this.TimeComboBox.TabIndex = 11;
+            this.TimeComboBox.UseAccent = false;
+            this.TimeComboBox.UseTallSize = false;
             // 
-            // LoginButton
+            // Save
             // 
-            this.LoginButton.AutoSize = false;
-            this.LoginButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoginButton.Depth = 0;
-            this.LoginButton.DrawShadows = true;
-            this.LoginButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LoginButton.HighEmphasis = true;
-            this.LoginButton.Icon = null;
-            this.LoginButton.Location = new System.Drawing.Point(40, 182);
-            this.LoginButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.LoginButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(194, 32);
-            this.LoginButton.TabIndex = 13;
-            this.LoginButton.Text = "Save";
-            this.LoginButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.LoginButton.UseAccentColor = false;
-            this.LoginButton.UseVisualStyleBackColor = true;
+            this.Save.AutoSize = false;
+            this.Save.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Save.Depth = 0;
+            this.Save.DrawShadows = true;
+            this.Save.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Save.HighEmphasis = true;
+            this.Save.Icon = null;
+            this.Save.Location = new System.Drawing.Point(46, 243);
+            this.Save.Margin = new System.Windows.Forms.Padding(5);
+            this.Save.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(222, 43);
+            this.Save.TabIndex = 13;
+            this.Save.Text = "Save";
+            this.Save.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Save.UseAccentColor = false;
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // materialButton1
             // 
@@ -114,11 +107,11 @@ namespace MyLobbyAD
             this.materialButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(40, 228);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.materialButton1.Location = new System.Drawing.Point(46, 304);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(5);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(194, 32);
+            this.materialButton1.Size = new System.Drawing.Size(222, 43);
             this.materialButton1.TabIndex = 14;
             this.materialButton1.Text = "Close";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -126,16 +119,32 @@ namespace MyLobbyAD
             this.materialButton1.UseVisualStyleBackColor = true;
             this.materialButton1.Click += new System.EventHandler(this.CloseButton_Click);
             // 
+            // statusCheckbox
+            // 
+            this.statusCheckbox.AutoSize = true;
+            this.statusCheckbox.Depth = 0;
+            this.statusCheckbox.Location = new System.Drawing.Point(45, 199);
+            this.statusCheckbox.Margin = new System.Windows.Forms.Padding(0);
+            this.statusCheckbox.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.statusCheckbox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.statusCheckbox.Name = "statusCheckbox";
+            this.statusCheckbox.Ripple = true;
+            this.statusCheckbox.Size = new System.Drawing.Size(97, 37);
+            this.statusCheckbox.TabIndex = 15;
+            this.statusCheckbox.Text = "Disabled";
+            this.statusCheckbox.UseVisualStyleBackColor = true;
+            this.statusCheckbox.CheckedChanged += new System.EventHandler(this.StatusCheckbox_CheckedChanged);
+            // 
             // SchedulerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(285, 286);
+            this.ClientSize = new System.Drawing.Size(315, 381);
+            this.Controls.Add(this.statusCheckbox);
             this.Controls.Add(this.materialButton1);
-            this.Controls.Add(this.LoginButton);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.materialComboBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Controls.Add(this.TimeComboBox);
             this.Name = "SchedulerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scheduler";
@@ -147,8 +156,9 @@ namespace MyLobbyAD
         #endregion
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
-        private MaterialSkin.Controls.MaterialButton LoginButton;
+        private MaterialSkin.Controls.MaterialComboBox TimeComboBox;
+        private MaterialSkin.Controls.MaterialButton Save;
         private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialCheckbox statusCheckbox;
     }
 }

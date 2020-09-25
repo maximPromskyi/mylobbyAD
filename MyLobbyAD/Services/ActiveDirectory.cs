@@ -6,6 +6,7 @@ using System.DirectoryServices;
 using System.DirectoryServices.AccountManagement;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MyLobbyAD.Services
 {
@@ -19,15 +20,41 @@ namespace MyLobbyAD.Services
                 return searcher != null;
             }
         }
-        public static void Connect()
+        public static async Task<bool> Connect()
         {
-            try
+            searcher = await Task.Run(() => 
             {
-                searcher = new PrincipalSearcher(
+                try 
+                {
+                    return new PrincipalSearcher(
+                        new UserPrincipal(
+                            new PrincipalContext(ContextType.Domain, Environment.UserDomainName)));
+                } 
+                catch 
+                {
+                    return null;
+                }
+
+            });
+            return IsConnect;
+        }
+
+        public static async Task<bool> Connect(string domainName, string username, string password)
+        {
+            searcher = await Task.Run(() =>
+            {
+                try
+                {
+                    return new PrincipalSearcher(
                     new UserPrincipal(
-                        new PrincipalContext(ContextType.Domain, Environment.UserDomainName)));
-            }
-            catch { }
+                        new PrincipalContext(ContextType.Domain, domainName, username, password)));
+                }
+                catch
+                {
+                    return null;
+                }
+            });
+            return IsConnect;
         }
         public static List<User> GetUsers()
         {

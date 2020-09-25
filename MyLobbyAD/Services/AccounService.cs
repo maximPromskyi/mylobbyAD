@@ -24,7 +24,6 @@ namespace MyLobbyAD.Services
         public static string GetMail()
         {
             return  AccounService.Email == null ? "unknown" : AccounService.Email;
-;
         }
     }
 }
