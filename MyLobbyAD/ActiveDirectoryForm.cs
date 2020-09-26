@@ -31,6 +31,7 @@ namespace MyLobbyAD
         private async void LoginButton_Click(object sender, EventArgs e)
         {
             await ApiService.UploadUsers();
+            MessageBox.Show("Data updated", "Success");
             /*if (LoginButton.Text == "start")
             {
                 

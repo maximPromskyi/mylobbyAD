@@ -31,11 +31,5 @@ namespace MyLobbyAD
             string selectedState = TimeComboBox.SelectedItem.ToString();
             ShedulerService.SetTime(selectedState);
         }
-
-        private void StatusCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            ShedulerService.Enabled = statusCheckbox.Checked;
-            statusCheckbox.Text = statusCheckbox.Checked ? "Enabled" : "Disabled";
-        }
     }
 }
