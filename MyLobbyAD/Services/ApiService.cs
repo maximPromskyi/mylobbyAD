@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Net.Http.Headers;
 using System.Linq;
+using System.Net;
 
 namespace MyLobbyAD.Services
 {
@@ -23,11 +24,18 @@ namespace MyLobbyAD.Services
             string result = response.Content.ReadAsStringAsync().Result;
             return JsonConvert.DeserializeObject<LoginInfoModel<LoginSuccess, LoginError>>(result);
         }
+        public static async Task<bool> GetUser()
+        {
+            string token = StorageService.InfoData.Token;
+            string userId = StorageService.InfoData.AccountId;
+            var response = await client.GetAsync($"{host}/api/users/{userId}?access_token={token}");
+            return response.StatusCode == HttpStatusCode.OK;
+        }
         public static async Task<bool> EmployeeAdd(User user)
         {
             var json = JsonConvert.SerializeObject(user);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync($"{host}/api/employees/add?access_token={AccounService.Token}", data);
+            var response = await client.PostAsync($"{host}/api/employees/add?access_token={StorageService.InfoData.Token}", data);
             string result = response.Content.ReadAsStringAsync().Result;
             return result != null;
         }
@@ -35,18 +43,18 @@ namespace MyLobbyAD.Services
         {
             var json = JsonConvert.SerializeObject(user);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync($"{host}/api/employees/edit?access_token={AccounService.Token}", data);
+            var response = await client.PostAsync($"{host}/api/employees/edit?access_token={StorageService.InfoData.Token}", data);
             string result = response.Content.ReadAsStringAsync().Result;
             return result != null;
         }
         public static async Task<LoginInfoModel<EmployeeInfo[], LoginError>> CheckEmployeeById(string[] usersId)
         {
             var json = JsonConvert.SerializeObject(new {
-                accountId = AccounService.AccountId,
+                accountId = StorageService.InfoData.AccountId,
                 activeDirectoryUsersId = usersId
             });
             var data = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync($"{host}/api/employees/checkByAdId?access_token={AccounService.Token}", data);
+            var response = await client.PostAsync($"{host}/api/employees/checkByAdId?access_token={StorageService.InfoData.Token}", data);
             string result = response.Content.ReadAsStringAsync().Result;
             return JsonConvert.DeserializeObject<LoginInfoModel<EmployeeInfo[], LoginError>>(result);
 

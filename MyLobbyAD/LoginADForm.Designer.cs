@@ -140,6 +140,7 @@
             // loader
             // 
             this.loader.BackColor = System.Drawing.Color.Transparent;
+            this.loader.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loader.Image = ((System.Drawing.Image)(resources.GetObject("loader.Image")));
             this.loader.Location = new System.Drawing.Point(178, 331);
             this.loader.Name = "loader";

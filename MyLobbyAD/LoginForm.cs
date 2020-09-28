@@ -21,31 +21,45 @@ namespace MyLobbyAD
         public LoginForm()
         {
             InitializeComponent();
+            StorageService.CreateStorage();
+            TryLogin();
         }
 
         private async void LoginButton_Click(object sender, EventArgs e)
         {
-            LoginButton.Text = "";
-            loader.Visible = true;
+            StartLoader();
             LoginInfoModel<LoginSuccess, LoginError> loginInfo = await ApiService.Login(email.Text, password.Text);
             if (loginInfo.Success != null)
             {
-                AccounService.CreateAccounService(loginInfo.Success);
-                bool isConnect = await ActiveDirectory.Connect();
-                if (isConnect)
-                {
-                    DisplayOtherForm(new ActiveDirectoryForm(loginInfo.Success));
-                }
-                else
-                {
-                    DisplayOtherForm(new LoginADForm());
-                }
+                StorageService.SetUserInfo(loginInfo.Success);
+                StorageService.SaveData();
+                await ConnectAD();
             }
             else
             {
                 DisplayError(loginInfo?.Error?.Message);
-                LoginButton.Text = "Sign in";
-                loader.Visible = false;
+                StopLoader();
+            }
+        }
+        private async void TryLogin()
+        {
+            if (StorageService.ExistData() && await ApiService.GetUser())
+            {
+                StartLoader();
+                await ConnectAD();
+                StopLoader();
+            }
+        }
+        private async Task ConnectAD()
+        {
+            bool isConnect = await ActiveDirectory.Connect();
+            if (isConnect)
+            {
+                DisplayOtherForm(new ActiveDirectoryForm());
+            }
+            else
+            {
+                DisplayOtherForm(new LoginADForm());
             }
         }
         private void DisplayOtherForm(Form otherForm)
@@ -61,6 +75,16 @@ namespace MyLobbyAD
             }
             warning.Visible = true;
             warning.Text = messageErr;
+        }
+        private void StartLoader()
+        {
+            LoginButton.Text = "";
+            loader.Visible = true;
+        }
+        private void StopLoader()
+        {
+            LoginButton.Text = "Sign in";
+            loader.Visible = false;
         }
     }
 }

@@ -11,7 +11,6 @@ namespace MyLobbyAD.Models
         public string Id { get; set; }
         public int? Ttl { get; set; }
         public string UserId { get; set; }
-        public string Error { get; set; }
 
     }
 }

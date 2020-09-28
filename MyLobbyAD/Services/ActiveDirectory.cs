@@ -100,7 +100,7 @@ namespace MyLobbyAD.Services
                 Email = dirEntry.Properties["mail"]?.Value?.ToString() == null ? "" : dirEntry.Properties["mail"]?.Value?.ToString(),
                 PhoneSms = dirEntry.Properties["telephoneNumber"]?.Value?.ToString() == null ? "" : dirEntry.Properties["telephoneNumber"]?.Value?.ToString(),
                 PhoneVoice = dirEntry.Properties["telephoneNumber"]?.Value?.ToString() == null ? "" : dirEntry.Properties["telephoneNumber"]?.Value?.ToString(),
-                AccountId = AccounService.AccountId
+                AccountId = StorageService.InfoData.AccountId
             };
         }
         public static string GetDomain()

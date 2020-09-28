@@ -11,8 +11,8 @@ namespace MyLobbyAD
 {
     public partial class SettingForm : MaterialForm
     {
-        private readonly Form mainForm;
-        public SettingForm(Form mainForm)
+        private readonly ActiveDirectoryForm mainForm;
+        public SettingForm(ActiveDirectoryForm mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
@@ -25,7 +25,7 @@ namespace MyLobbyAD
 
         private void SchedulerButton_Click(object sender, EventArgs e)
         {
-            SchedulerForm schedulerForm = new SchedulerForm();
+            SchedulerForm schedulerForm = new SchedulerForm(mainForm);
             schedulerForm.Show();
             this.Close();
         }

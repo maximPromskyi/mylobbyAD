@@ -13,23 +13,53 @@ namespace MyLobbyAD
 {
     public partial class SchedulerForm : MaterialForm
     {
-        public SchedulerForm()
+        private readonly ActiveDirectoryForm mainForm;
+        public SchedulerForm(ActiveDirectoryForm mainForm)
         {
             InitializeComponent();
-            string[] keys = ShedulerService.timeItems.Select(d => d.Key).ToArray();
+            SchedulerService.SetSchedulerForm(this);
+            this.mainForm = mainForm;
+            string[] keys = SchedulerService.timeItems.Select(d => d.Key).ToArray();
             TimeComboBox.Items.AddRange(keys);
             TimeComboBox.SelectedIndex = 0;
+            if (SchedulerService.Enabled)
+            {
+                ChangeToRun();
+            }
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void Save_Click(object sender, EventArgs e)
+        private void ChangeToRun()
         {
-            string selectedState = TimeComboBox.SelectedItem.ToString();
-            ShedulerService.SetTime(selectedState);
+            Run.Text = "Stop";
+            Run.UseAccentColor = true;
+            timerInfo.Text = $"Time to update: {SchedulerService.ConvertStrInterval()}";
+            timerInfo.Visible = true;
+            mainForm?.StartTimer(timerInfo.Text);
+        }
+        private void ChangeToStop()
+        {
+            Run.Text = "Start";
+            Run.UseAccentColor = false;
+            timerInfo.Visible = false;
+            mainForm?.StopTimer();
+        }
+        private void Run_Click(object sender, EventArgs e)
+        {
+            if (Run.Text == "Start")
+            {
+                SchedulerService.Start(TimeComboBox.SelectedItem.ToString());
+                ChangeToRun();
+                SchedulerService.AddToAutoStart();
+            }
+            else 
+            {
+                SchedulerService.Stop();
+                ChangeToStop();
+            }
         }
     }
 }

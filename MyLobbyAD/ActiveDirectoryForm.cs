@@ -16,11 +16,16 @@ namespace MyLobbyAD
 {
     public partial class ActiveDirectoryForm : MaterialForm
     {
-        public ActiveDirectoryForm(LoginSuccess loginSuccess = null)
+        public ActiveDirectoryForm()
         {
             InitializeComponent();
-            username.Text = AccounService.Email == null ? "unknown" : AccounService.Email;
+            SchedulerService.SetADForm(this);
+            username.Text = StorageService.InfoData.Email == null ? "unknown" : StorageService.InfoData.Email;
             domainName.Text = ActiveDirectory.GetDomain();
+            if (SchedulerService.Enabled)
+            {
+                StartTimer(SchedulerService.ConvertStrInterval());
+            }
         }
         private void Setting_Click(object sender, EventArgs e)
         {
@@ -30,25 +35,33 @@ namespace MyLobbyAD
 
         private async void LoginButton_Click(object sender, EventArgs e)
         {
+            StartLoader();
             await ApiService.UploadUsers();
+            StopLoader();
             MessageBox.Show("Data updated", "Success");
-            /*if (LoginButton.Text == "start")
-            {
-                
-                if (ShedulerService.Enabled)
-                {
-                    ShedulerService.Start();
-                    LoginButton.Text = "stop";
-                    LoginButton.UseAccentColor = true;
-                    LoginButton.Type = MaterialButton.MaterialButtonType.Outlined;
-                }
-            }
-            else
-            {
-                LoginButton.Text = "start";
-                LoginButton.UseAccentColor = false;
-                LoginButton.Type = MaterialButton.MaterialButtonType.Contained;
-            }*/
+        }
+        public void Success()
+        {
+            MessageBox.Show("Data updated", "Success");
+        }
+        public void StartTimer(string tInfo)
+        {
+            timerInfo.Visible = true;
+            timerInfo.Text = tInfo;
+        }
+        public void StopTimer()
+        {
+            timerInfo.Visible = false;
+        }
+        public void StartLoader()
+        {
+            loader.Visible = true;
+            LoginButton.Text = "";
+        }
+        public void StopLoader()
+        {
+            loader.Visible = false;
+            LoginButton.Text = "Upload users";
         }
     }
 }
