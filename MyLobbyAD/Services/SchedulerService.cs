@@ -145,7 +145,7 @@ namespace MyLobbyAD.Services
             Enabled = false;
             StorageService.RemoveDateInfo();
         }
-        public static void AddToAutoStart()
+        public static void AddToStartUp()
         {
             const string applicationName = "MyLobbyAD";
             const string pathRegistryKeyStartup =

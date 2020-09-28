@@ -54,7 +54,7 @@ namespace MyLobbyAD
             {
                 SchedulerService.Start(TimeComboBox.SelectedItem.ToString());
                 ChangeToRun();
-                SchedulerService.AddToAutoStart();
+                SchedulerService.AddToStartUp();
             }
             else 
             {
