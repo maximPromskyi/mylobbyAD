@@ -13,14 +13,16 @@ namespace MyLobbyAD.Services
         public static DateTime PreviousUpdate { get; set; }
         public static DateTime NextUpdate { get; set; }
         public static TimeSpan Interval { get; set; }
+
         public static ActiveDirectoryForm activeDirectoryForm;
         public static SchedulerForm schedulerForm;
         public static bool Enabled { get; private set; }
         public static string Key { get; private set; } = "3 hours";
         private static TimerCallback tm = new TimerCallback(SetInterval);
         private static readonly int period = 1000;
+
         public static Dictionary<string, long> timeItems = new Dictionary<string, long>() {
-            {"10 second", 10000},
+            {"50 second", 50000},
             {"3 hours", 10800000},
             {"6 hours", 21600000},
             {"12 hours", 43200000},
@@ -47,7 +49,14 @@ namespace MyLobbyAD.Services
         }
         public static void SetTime()
         {
-            UpdateInterval();
+            if (StorageService.InfoData.NextUpdate == new DateTime() || StorageService.InfoData.Key == null)
+            {
+                UpdateInterval();
+            }
+            else
+            {
+                NextUpdate = StorageService.InfoData.NextUpdate;
+            }
             if (timer == null)
             {
                 timer = new Timer(tm, 1, 0, period);
@@ -60,13 +69,13 @@ namespace MyLobbyAD.Services
         }
         public static void SetTimerInfo()
         {
-            string dateInfo = $"Time to update: {SchedulerService.ConvertStrInterval()}";
-            if (activeDirectoryForm != null)
+            string dateInfo = $"Update in: {SchedulerService.ConvertStrInterval()}";
+            if (activeDirectoryForm != null && activeDirectoryForm.Created)
             {
                 activeDirectoryForm.Invoke(new Action(
                     () => activeDirectoryForm.timerInfo.Text = dateInfo));
             }
-            if (schedulerForm != null)
+            if (schedulerForm != null && schedulerForm.Created)
             {
                 schedulerForm.Invoke(new Action(
                     () => schedulerForm.timerInfo.Text = dateInfo));
@@ -77,24 +86,31 @@ namespace MyLobbyAD.Services
             PreviousUpdate = DateTime.UtcNow;
             NextUpdate = PreviousUpdate.AddMilliseconds(timeItems[Key]);
             Interval = NextUpdate - PreviousUpdate;
+            StorageService.SetDateInfo(NextUpdate, Key);
         }
         private static async void SetInterval(object seconds)
         {
             Interval = NextUpdate - DateTime.UtcNow;
             if (Interval.TotalSeconds <= 0)
             {
-                activeDirectoryForm.Invoke(new Action(
-                    () => activeDirectoryForm.StartLoader()));
+                if (activeDirectoryForm != null && activeDirectoryForm.Created)
+                {
+                    activeDirectoryForm.Invoke(new Action(
+                        () => activeDirectoryForm.StartLoader()));
+                }
+                    
 
                 timer.Change(Timeout.Infinite, Timeout.Infinite);
-                // await ApiService.UploadUsers();
-                activeDirectoryForm.Invoke(new Action(
-                    () => activeDirectoryForm.Success()));
+                await ApiService.UploadUsers();
                 UpdateInterval();
                 timer = new Timer(tm, 1, 0, period);
-
-                activeDirectoryForm.Invoke(new Action(
-                    () => activeDirectoryForm.StopLoader()));
+                if (activeDirectoryForm != null && activeDirectoryForm.Created)
+                {
+                    activeDirectoryForm.Invoke(new Action(
+                        () => activeDirectoryForm.Success()));
+                    activeDirectoryForm.Invoke(new Action(
+                        () => activeDirectoryForm.StopLoader()));
+                }
             }
             SetTimerInfo();
         }
@@ -117,12 +133,17 @@ namespace MyLobbyAD.Services
             string minutes = Interval.Minutes > 9
                 ? Interval.Minutes.ToString()
                 : $"0{Interval.Minutes}";
-            return $"{days} {hours}:{minutes}:{Interval.Seconds.ToString()}";
+
+            string seconds = Interval.Seconds > 9
+                ? Interval.Seconds.ToString()
+                : $"0{Interval.Seconds}";
+            return $"{days} {hours}:{minutes}:{seconds}";
         }
         public static void Stop()
         {
             timer.Change(Timeout.Infinite, Timeout.Infinite);
             Enabled = false;
+            StorageService.RemoveDateInfo();
         }
         public static void AddToAutoStart()
         {
@@ -136,6 +157,14 @@ namespace MyLobbyAD.Services
                 registryKeyStartup.SetValue(
                     applicationName,
                     string.Format("\"{0}\"", System.Reflection.Assembly.GetExecutingAssembly().Location));
+            }
+        }
+
+        public static void СheckLaunch()
+        {
+            if (StorageService.InfoData.NextUpdate != new DateTime() && StorageService.InfoData.Key != null)
+            {
+                Start(StorageService.InfoData.Key);
             }
         }
     }

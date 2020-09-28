@@ -22,6 +22,7 @@ namespace MyLobbyAD
             SchedulerService.SetADForm(this);
             username.Text = StorageService.InfoData.Email == null ? "unknown" : StorageService.InfoData.Email;
             domainName.Text = ActiveDirectory.GetDomain();
+            SchedulerService.СheckLaunch();
             if (SchedulerService.Enabled)
             {
                 StartTimer(SchedulerService.ConvertStrInterval());

@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using MyLobbyAD.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +33,7 @@ namespace MyLobbyAD
 
         private void SignOutButton_Click(object sender, EventArgs e)
         {
+            StorageService.RemoveData();
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
             mainForm.Close();

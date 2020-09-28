@@ -22,6 +22,7 @@ namespace MyLobbyAD
             string[] keys = SchedulerService.timeItems.Select(d => d.Key).ToArray();
             TimeComboBox.Items.AddRange(keys);
             TimeComboBox.SelectedIndex = 0;
+            SchedulerService.СheckLaunch();
             if (SchedulerService.Enabled)
             {
                 ChangeToRun();

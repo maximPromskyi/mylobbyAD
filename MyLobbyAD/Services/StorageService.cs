@@ -28,7 +28,14 @@ namespace MyLobbyAD.Services
             _isoStore = IsolatedStorageFile.GetStore(
                 IsolatedStorageScope.User | IsolatedStorageScope.Assembly, null, null);
             _data = new UserData();
-            GetData();
+            try
+            {
+                GetData();
+            }
+            catch
+            {
+                SaveData();
+            }
         }
         public static void SetUserInfo(LoginSuccess loginSuccess)
         {
@@ -36,9 +43,11 @@ namespace MyLobbyAD.Services
             _data.Email = loginSuccess.Email;
             _data.Token = loginSuccess.Id;
         }
-        public static void SetDate(DateTime nextUpdate)
+        public static void SetDateInfo(DateTime nextUpdate, string key)
         {
             _data.NextUpdate = nextUpdate;
+            _data.Key = key;
+            SaveData();
         }
         public static void GetData()
         {
@@ -51,6 +60,17 @@ namespace MyLobbyAD.Services
         public static bool ExistData()
         {
             return InfoData.Token != null && InfoData.AccountId != null;
+        }
+        public static void RemoveData()
+        {
+            _data = new UserData();
+            SaveData();
+        }
+        public static void RemoveDateInfo()
+        {
+            _data.NextUpdate = new DateTime();
+            _data.Key = null;
+            SaveData();
         }
     }
 }
