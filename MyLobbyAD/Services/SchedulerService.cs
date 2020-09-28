@@ -91,28 +91,32 @@ namespace MyLobbyAD.Services
         private static async void SetInterval(object seconds)
         {
             Interval = NextUpdate - DateTime.UtcNow;
-            if (Interval.TotalSeconds <= 0)
+            try
             {
-                if (activeDirectoryForm != null && activeDirectoryForm.Created)
+                if (Interval.TotalSeconds <= 0)
                 {
-                    activeDirectoryForm.Invoke(new Action(
-                        () => activeDirectoryForm.StartLoader()));
-                }
-                    
+                    if (activeDirectoryForm != null && activeDirectoryForm.Created)
+                    {
+                        activeDirectoryForm.Invoke(new Action(
+                            () => activeDirectoryForm.StartLoader()));
+                    }
 
-                timer.Change(Timeout.Infinite, Timeout.Infinite);
-                await ApiService.UploadUsers();
-                UpdateInterval();
-                timer = new Timer(tm, 1, 0, period);
-                if (activeDirectoryForm != null && activeDirectoryForm.Created)
-                {
-                    activeDirectoryForm.Invoke(new Action(
-                        () => activeDirectoryForm.Success()));
-                    activeDirectoryForm.Invoke(new Action(
-                        () => activeDirectoryForm.StopLoader()));
+
+                    timer.Change(Timeout.Infinite, Timeout.Infinite);
+                    await ApiService.UploadUsers();
+                    UpdateInterval();
+                    timer = new Timer(tm, 1, 0, period);
+                    if (activeDirectoryForm != null && activeDirectoryForm.Created)
+                    {
+                       /* activeDirectoryForm.Invoke(new Action(
+                            () => activeDirectoryForm.Success()));*/
+                        activeDirectoryForm.Invoke(new Action(
+                            () => activeDirectoryForm.StopLoader()));
+                    }
                 }
+                SetTimerInfo();
             }
-            SetTimerInfo();
+            catch { }
         }
         public static void Start(string key = "3 hours")
         {
