@@ -147,7 +147,6 @@ namespace MyLobbyAD
             this.Name = "SchedulerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scheduler";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SchedulerForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -172,7 +172,6 @@
             this.Name = "LoginADForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Active Directory";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginADForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.loader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

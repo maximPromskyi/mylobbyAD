@@ -39,13 +39,5 @@ namespace MyLobbyAD
                 LoginButton.Text = "Sign in";
             }
         }
-
-        private void LoginADForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (Application.OpenForms.Count <= 1)
-            {
-                Application.Exit();
-            }
-        }
     }
 }

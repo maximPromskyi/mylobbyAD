@@ -258,7 +258,6 @@ namespace MyLobbyAD
             this.Name = "ActiveDirectoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Synchronization";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ActiveDirectoryForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.settingPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loader)).EndInit();
             this.ResumeLayout(false);

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace MyLobbyAD
 {
@@ -16,18 +17,18 @@ namespace MyLobbyAD
         [STAThread]
         static void Main()
         {
-            if (mutex.WaitOne(TimeSpan.Zero, true))
+            if (!mutex.WaitOne(TimeSpan.Zero, true))
             {
-                Application.SetHighDpiMode(HighDpiMode.SystemAware);
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new LoginForm());
+                Process.GetProcessesByName(Application.ProductName);
+                foreach (Process process in Process.GetProcessesByName(Application.ProductName))
+                {
+                    process.Kill();
+                }
             }
-            else
-            {
-                MessageBox.Show("The application is already running");
-                return;
-            }
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new LoginForm());
         }
     }
 }
