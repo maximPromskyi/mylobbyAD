@@ -46,5 +46,13 @@ namespace MyLobbyAD
             mainForm.Close();
             this.Close();
         }
+
+        private void SettingForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Application.OpenForms.Count <= 1)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

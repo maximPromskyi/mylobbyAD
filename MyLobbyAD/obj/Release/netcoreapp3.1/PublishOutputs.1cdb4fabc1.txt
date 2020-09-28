@@ -1,0 +1,11 @@
+C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreapp3.1\publish\MyLobbyAD.exe
+C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreapp3.1\publish\MyLobbyAD.dll
+C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreapp3.1\publish\MyLobbyAD.deps.json
+C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreapp3.1\publish\MyLobbyAD.runtimeconfig.json
+C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreapp3.1\publish\MyLobbyAD.pdb
+C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreapp3.1\publish\MaterialSkin.dll
+C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreapp3.1\publish\Newtonsoft.Json.dll
+C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreapp3.1\publish\System.DirectoryServices.AccountManagement.dll
+C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreapp3.1\publish\System.DirectoryServices.Protocols.dll
+C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreapp3.1\publish\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.AccountManagement.dll
+C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreapp3.1\publish\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll

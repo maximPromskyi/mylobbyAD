@@ -39,7 +39,7 @@ namespace MyLobbyAD
             StartLoader();
             await ApiService.UploadUsers();
             StopLoader();
-            MessageBox.Show("Data updated", "Success");
+            Success();
         }
         public void Success()
         {
@@ -63,6 +63,14 @@ namespace MyLobbyAD
         {
             loader.Visible = false;
             LoginButton.Text = "Upload users";
+        }
+
+        private void ActiveDirectoryForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Application.OpenForms.Count <= 1)
+            {
+                Application.Exit();
+            }      
         }
     }
 }

@@ -22,7 +22,7 @@ namespace MyLobbyAD.Services
         private static readonly int period = 1000;
 
         public static Dictionary<string, long> timeItems = new Dictionary<string, long>() {
-            {"50 second", 50000},
+            {"30 second", 30000},
             {"3 hours", 10800000},
             {"6 hours", 21600000},
             {"12 hours", 43200000},
@@ -145,18 +145,13 @@ namespace MyLobbyAD.Services
             Enabled = false;
             StorageService.RemoveDateInfo();
         }
-        public static void AddToStartUp()
+        public static void AddToStartUp(string appName, string executablePath)
         {
-            const string applicationName = "MyLobbyAD";
-            const string pathRegistryKeyStartup =
-                        "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
+            const string pathRegistryKeyStartup = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
 
-            using (RegistryKey registryKeyStartup =
-                        Registry.CurrentUser.OpenSubKey(pathRegistryKeyStartup, true))
+            using (RegistryKey registryKeyStartup = Registry.CurrentUser.OpenSubKey(pathRegistryKeyStartup, true))
             {
-                registryKeyStartup.SetValue(
-                    applicationName,
-                    string.Format("\"{0}\"", System.Reflection.Assembly.GetExecutingAssembly().Location));
+                registryKeyStartup.SetValue(appName, executablePath);
             }
         }
 

@@ -54,12 +54,20 @@ namespace MyLobbyAD
             {
                 SchedulerService.Start(TimeComboBox.SelectedItem.ToString());
                 ChangeToRun();
-                SchedulerService.AddToStartUp();
+                SchedulerService.AddToStartUp(Application.ProductName, Application.ExecutablePath);
             }
             else 
             {
                 SchedulerService.Stop();
                 ChangeToStop();
+            }
+        }
+
+        private void SchedulerForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Application.OpenForms.Count <= 1)
+            {
+                Application.Exit();
             }
         }
     }

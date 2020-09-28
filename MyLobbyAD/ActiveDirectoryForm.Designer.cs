@@ -156,22 +156,22 @@ namespace MyLobbyAD
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label1.Location = new System.Drawing.Point(110, 115);
+            this.label1.Location = new System.Drawing.Point(109, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 18);
+            this.label1.Size = new System.Drawing.Size(135, 18);
             this.label1.TabIndex = 19;
-            this.label1.Text = "SECURE CONNECTION";
+            this.label1.Text = "Secure Connection";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label2.Location = new System.Drawing.Point(106, 245);
+            this.label2.Location = new System.Drawing.Point(106, 244);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 18);
+            this.label2.Size = new System.Drawing.Size(135, 18);
             this.label2.TabIndex = 21;
-            this.label2.Text = "SECURE CONNECTION";
+            this.label2.Text = "Secure Connection";
             // 
             // materialLabel1
             // 
@@ -191,7 +191,7 @@ namespace MyLobbyAD
             this.username.AutoSize = true;
             this.username.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.username.ForeColor = System.Drawing.Color.Black;
-            this.username.Location = new System.Drawing.Point(102, 147);
+            this.username.Location = new System.Drawing.Point(103, 147);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(79, 19);
             this.username.TabIndex = 23;
@@ -258,6 +258,7 @@ namespace MyLobbyAD
             this.Name = "ActiveDirectoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Synchronization";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ActiveDirectoryForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.settingPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loader)).EndInit();
             this.ResumeLayout(false);

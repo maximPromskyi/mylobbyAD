@@ -43,7 +43,7 @@ namespace MyLobbyAD
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel1.Location = new System.Drawing.Point(46, 99);
+            this.materialLabel1.Location = new System.Drawing.Point(40, 74);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(170, 24);
@@ -66,11 +66,12 @@ namespace MyLobbyAD
             this.TimeComboBox.Hint = "Select time";
             this.TimeComboBox.IntegralHeight = false;
             this.TimeComboBox.ItemHeight = 29;
-            this.TimeComboBox.Location = new System.Drawing.Point(46, 157);
+            this.TimeComboBox.Location = new System.Drawing.Point(40, 118);
+            this.TimeComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TimeComboBox.MaxDropDownItems = 10;
             this.TimeComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.TimeComboBox.Name = "TimeComboBox";
-            this.TimeComboBox.Size = new System.Drawing.Size(222, 35);
+            this.TimeComboBox.Size = new System.Drawing.Size(195, 35);
             this.TimeComboBox.TabIndex = 11;
             this.TimeComboBox.UseAccent = false;
             this.TimeComboBox.UseTallSize = false;
@@ -85,11 +86,11 @@ namespace MyLobbyAD
             this.Run.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Run.HighEmphasis = true;
             this.Run.Icon = null;
-            this.Run.Location = new System.Drawing.Point(46, 243);
-            this.Run.Margin = new System.Windows.Forms.Padding(5);
+            this.Run.Location = new System.Drawing.Point(40, 182);
+            this.Run.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Run.MouseState = MaterialSkin.MouseState.HOVER;
             this.Run.Name = "Run";
-            this.Run.Size = new System.Drawing.Size(222, 43);
+            this.Run.Size = new System.Drawing.Size(194, 32);
             this.Run.TabIndex = 13;
             this.Run.Text = "Start";
             this.Run.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -107,11 +108,11 @@ namespace MyLobbyAD
             this.materialButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(46, 304);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(5);
+            this.materialButton1.Location = new System.Drawing.Point(40, 228);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(222, 43);
+            this.materialButton1.Size = new System.Drawing.Size(194, 32);
             this.materialButton1.TabIndex = 14;
             this.materialButton1.Text = "Close";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -124,7 +125,7 @@ namespace MyLobbyAD
             this.timerInfo.AutoSize = true;
             this.timerInfo.Depth = 0;
             this.timerInfo.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.timerInfo.Location = new System.Drawing.Point(46, 209);
+            this.timerInfo.Location = new System.Drawing.Point(40, 157);
             this.timerInfo.MouseState = MaterialSkin.MouseState.HOVER;
             this.timerInfo.Name = "timerInfo";
             this.timerInfo.Size = new System.Drawing.Size(65, 19);
@@ -134,17 +135,19 @@ namespace MyLobbyAD
             // 
             // SchedulerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 381);
+            this.ClientSize = new System.Drawing.Size(276, 286);
             this.Controls.Add(this.timerInfo);
             this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.Run);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.TimeComboBox);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SchedulerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scheduler";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SchedulerForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
