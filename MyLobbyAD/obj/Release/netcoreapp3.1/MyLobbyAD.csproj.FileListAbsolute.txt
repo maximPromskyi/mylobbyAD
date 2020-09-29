@@ -10,7 +10,6 @@ C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreap
 C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreapp3.1\System.DirectoryServices.Protocols.dll
 C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.AccountManagement.dll
 C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
-C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\obj\Release\netcoreapp3.1\MyLobbyAD.csprojAssemblyReference.cache
 C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\obj\Release\netcoreapp3.1\MyLobbyAD.ActiveDirectoryForm.resources
 C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\obj\Release\netcoreapp3.1\MyLobbyAD.LoginADForm.resources
 C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\obj\Release\netcoreapp3.1\MyLobbyAD.LoginForm.resources
