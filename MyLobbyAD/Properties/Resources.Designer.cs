@@ -63,79 +63,9 @@ namespace MyLobbyAD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _185095 {
+        internal static System.Drawing.Bitmap settings_icon {
             get {
-                object obj = ResourceManager.GetObject("185095", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _185095__1_ {
-            get {
-                object obj = ResourceManager.GetObject("185095 (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap connection_status_on_20px {
-            get {
-                object obj = ResourceManager.GetObject("connection_status_on_20px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap connection_status_on_30px {
-            get {
-                object obj = ResourceManager.GetObject("connection_status_on_30px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap settings_36px {
-            get {
-                object obj = ResourceManager.GetObject("settings_36px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Spinner_1s_200px {
-            get {
-                object obj = ResourceManager.GetObject("Spinner-1s-200px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Spinner_1s_40px {
-            get {
-                object obj = ResourceManager.GetObject("Spinner-1s-40px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Spinner_1s_40px__1_ {
-            get {
-                object obj = ResourceManager.GetObject("Spinner-1s-40px (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("settings-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

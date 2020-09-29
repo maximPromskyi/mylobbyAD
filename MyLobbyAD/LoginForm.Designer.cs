@@ -67,7 +67,7 @@
             this.LoginButton.HighEmphasis = true;
             this.LoginButton.Icon = null;
             this.LoginButton.Location = new System.Drawing.Point(82, 269);
-            this.LoginButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(5);
             this.LoginButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(208, 45);

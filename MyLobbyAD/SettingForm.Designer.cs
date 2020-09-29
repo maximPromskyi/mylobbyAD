@@ -29,6 +29,7 @@ namespace MyLobbyAD
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             this.ShedulerButton = new MaterialSkin.Controls.MaterialButton();
             this.SignOutButton = new MaterialSkin.Controls.MaterialButton();
             this.CloseButton = new MaterialSkin.Controls.MaterialButton();
@@ -45,11 +46,11 @@ namespace MyLobbyAD
             this.ShedulerButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ShedulerButton.HighEmphasis = true;
             this.ShedulerButton.Icon = null;
-            this.ShedulerButton.Location = new System.Drawing.Point(11, 72);
-            this.ShedulerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ShedulerButton.Location = new System.Drawing.Point(13, 96);
+            this.ShedulerButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ShedulerButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ShedulerButton.Name = "ShedulerButton";
-            this.ShedulerButton.Size = new System.Drawing.Size(329, 35);
+            this.ShedulerButton.Size = new System.Drawing.Size(376, 47);
             this.ShedulerButton.TabIndex = 10;
             this.ShedulerButton.Text = "scheduler";
             this.ShedulerButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -67,11 +68,11 @@ namespace MyLobbyAD
             this.SignOutButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SignOutButton.HighEmphasis = true;
             this.SignOutButton.Icon = null;
-            this.SignOutButton.Location = new System.Drawing.Point(10, 152);
-            this.SignOutButton.Margin = new System.Windows.Forms.Padding(4);
+            this.SignOutButton.Location = new System.Drawing.Point(11, 203);
+            this.SignOutButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.SignOutButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.SignOutButton.Name = "SignOutButton";
-            this.SignOutButton.Size = new System.Drawing.Size(329, 34);
+            this.SignOutButton.Size = new System.Drawing.Size(376, 45);
             this.SignOutButton.TabIndex = 12;
             this.SignOutButton.Text = "Sign out";
             this.SignOutButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -89,11 +90,11 @@ namespace MyLobbyAD
             this.CloseButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CloseButton.HighEmphasis = true;
             this.CloseButton.Icon = null;
-            this.CloseButton.Location = new System.Drawing.Point(188, 220);
-            this.CloseButton.Margin = new System.Windows.Forms.Padding(4);
+            this.CloseButton.Location = new System.Drawing.Point(215, 293);
+            this.CloseButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.CloseButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(151, 34);
+            this.CloseButton.Size = new System.Drawing.Size(173, 45);
             this.CloseButton.TabIndex = 13;
             this.CloseButton.Text = "Close";
             this.CloseButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -111,11 +112,11 @@ namespace MyLobbyAD
             this.SwitchADButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SwitchADButton.HighEmphasis = true;
             this.SwitchADButton.Icon = null;
-            this.SwitchADButton.Location = new System.Drawing.Point(10, 112);
-            this.SwitchADButton.Margin = new System.Windows.Forms.Padding(4);
+            this.SwitchADButton.Location = new System.Drawing.Point(11, 149);
+            this.SwitchADButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.SwitchADButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.SwitchADButton.Name = "SwitchADButton";
-            this.SwitchADButton.Size = new System.Drawing.Size(329, 35);
+            this.SwitchADButton.Size = new System.Drawing.Size(376, 47);
             this.SwitchADButton.TabIndex = 14;
             this.SwitchADButton.Text = "Switch active directory";
             this.SwitchADButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -125,14 +126,14 @@ namespace MyLobbyAD
             // 
             // SettingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 268);
+            this.ClientSize = new System.Drawing.Size(402, 357);
             this.Controls.Add(this.SwitchADButton);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.SignOutButton);
             this.Controls.Add(this.ShedulerButton);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Setting";
