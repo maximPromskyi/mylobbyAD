@@ -25,6 +25,12 @@
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_7C10F20E91784EDABF034A19979AAE13"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -122,6 +128,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7C10F20E91784EDABF034A19979AAE13"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\MyLobby-logo.ico"
+            "TargetName" = "8:MyLobby-logo.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_749CFC5E76494753AFCA10564FD414CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -190,7 +216,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:MyLobbyAD"
         "ProductCode" = "8:{0F78E867-73D6-4062-B83C-D83FB09A24B3}"
-        "PackageCode" = "8:{7E171532-BC84-40E8-A4C3-2A84A8F68E28}"
+        "PackageCode" = "8:{6E75E4E6-F5CA-45C9-9049-76F8B85177BA}"
         "UpgradeCode" = "8:{7C9A3268-7830-48D1-A035-F80E32C23807}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -321,7 +347,7 @@
             "Target" = "8:_2952052565424814A6221019E6920BD9"
             "Folder" = "8:_231233CA671D4FA5B115DA29CE6A996D"
             "WorkingFolder" = "8:_749CFC5E76494753AFCA10564FD414CB"
-            "Icon" = "8:"
+            "Icon" = "8:_7C10F20E91784EDABF034A19979AAE13"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E2C55B08F5D0411B9533BC2DAE85DD03"
@@ -335,7 +361,7 @@
             "Target" = "8:_2952052565424814A6221019E6920BD9"
             "Folder" = "8:_9515F3739E4140799E2D41DDAE0FA7AB"
             "WorkingFolder" = "8:_749CFC5E76494753AFCA10564FD414CB"
-            "Icon" = "8:"
+            "Icon" = "8:_7C10F20E91784EDABF034A19979AAE13"
             "Feature" = "8:"
             }
         }
