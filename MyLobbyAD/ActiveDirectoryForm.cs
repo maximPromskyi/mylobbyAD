@@ -20,7 +20,6 @@ namespace MyLobbyAD
         {
             InitializeComponent();
             SchedulerService.SetADForm(this);
-            StorageService.CreateStorage();
             username.Text = StorageService.InfoData.Email == null ? "unknown" : StorageService.InfoData.Email;
             domainName.Text = ActiveDirectory.GetDomain();
             UpdatePreviousDate();
