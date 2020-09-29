@@ -47,7 +47,7 @@ namespace MyLobbyAD
             this.ShedulerButton.HighEmphasis = true;
             this.ShedulerButton.Icon = null;
             this.ShedulerButton.Location = new System.Drawing.Point(13, 96);
-            this.ShedulerButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ShedulerButton.Margin = new System.Windows.Forms.Padding(5);
             this.ShedulerButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ShedulerButton.Name = "ShedulerButton";
             this.ShedulerButton.Size = new System.Drawing.Size(376, 47);
@@ -69,7 +69,7 @@ namespace MyLobbyAD
             this.SignOutButton.HighEmphasis = true;
             this.SignOutButton.Icon = null;
             this.SignOutButton.Location = new System.Drawing.Point(11, 203);
-            this.SignOutButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.SignOutButton.Margin = new System.Windows.Forms.Padding(5);
             this.SignOutButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.SignOutButton.Name = "SignOutButton";
             this.SignOutButton.Size = new System.Drawing.Size(376, 45);
@@ -91,7 +91,7 @@ namespace MyLobbyAD
             this.CloseButton.HighEmphasis = true;
             this.CloseButton.Icon = null;
             this.CloseButton.Location = new System.Drawing.Point(215, 293);
-            this.CloseButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.CloseButton.Margin = new System.Windows.Forms.Padding(5);
             this.CloseButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(173, 45);
@@ -113,7 +113,7 @@ namespace MyLobbyAD
             this.SwitchADButton.HighEmphasis = true;
             this.SwitchADButton.Icon = null;
             this.SwitchADButton.Location = new System.Drawing.Point(11, 149);
-            this.SwitchADButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.SwitchADButton.Margin = new System.Windows.Forms.Padding(5);
             this.SwitchADButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.SwitchADButton.Name = "SwitchADButton";
             this.SwitchADButton.Size = new System.Drawing.Size(376, 47);
@@ -134,6 +134,9 @@ namespace MyLobbyAD
             this.Controls.Add(this.SignOutButton);
             this.Controls.Add(this.ShedulerButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = this.ClientSize;
+            this.MinimumSize = this.ClientSize;
             this.Name = "SettingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Setting";

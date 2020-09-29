@@ -11,6 +11,7 @@ namespace MyLobbyAD.Models
         public string Email { get; set; }
         public string AccountId { get; set; }
         public DateTime NextUpdate { get; set; }
+        public DateTime PreviousUpdate { get; set; }
         public string Key { get; set; }
     }
 }

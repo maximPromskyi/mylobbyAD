@@ -146,8 +146,8 @@
             this.Controls.Add(this.email);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(398, 335);
-            this.MinimumSize = new System.Drawing.Size(398, 335);
+            this.MaximumSize = this.ClientSize;
+            this.MinimumSize = this.ClientSize;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyLobby";

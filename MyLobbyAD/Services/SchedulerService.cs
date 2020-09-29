@@ -69,7 +69,7 @@ namespace MyLobbyAD.Services
         }
         public static void SetTimerInfo()
         {
-            string dateInfo = $"Update in: {SchedulerService.ConvertStrInterval()}";
+            string dateInfo = $"Next update in: {SchedulerService.ConvertStrInterval()}";
             if (activeDirectoryForm != null && activeDirectoryForm.Created)
             {
                 activeDirectoryForm.Invoke(new Action(
@@ -101,17 +101,23 @@ namespace MyLobbyAD.Services
                             () => activeDirectoryForm.StartLoader()));
                     }
 
-
                     timer.Change(Timeout.Infinite, Timeout.Infinite);
-                    await ApiService.UploadUsers();
+
+                    // await ApiService.UploadUsers();
+                    StorageService.SetPreviousUpdate(NextUpdate);
                     UpdateInterval();
                     timer = new Timer(tm, 1, 0, period);
                     if (activeDirectoryForm != null && activeDirectoryForm.Created)
                     {
-                       /* activeDirectoryForm.Invoke(new Action(
-                            () => activeDirectoryForm.Success()));*/
+                        activeDirectoryForm.Invoke(new Action(
+                            () => activeDirectoryForm.UpdatePreviousDate()));
                         activeDirectoryForm.Invoke(new Action(
                             () => activeDirectoryForm.StopLoader()));
+                    }
+                    if (schedulerForm != null && schedulerForm.Created)
+                    {
+                        schedulerForm.Invoke(new Action(
+                            () => schedulerForm.UpdatePreviousDate()));
                     }
                 }
                 SetTimerInfo();

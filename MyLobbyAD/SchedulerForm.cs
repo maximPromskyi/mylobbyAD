@@ -18,6 +18,7 @@ namespace MyLobbyAD
         {
             InitializeComponent();
             SchedulerService.SetSchedulerForm(this);
+            UpdatePreviousDate();
             this.mainForm = mainForm;
             string[] keys = SchedulerService.timeItems.Select(d => d.Key).ToArray();
             TimeComboBox.Items.AddRange(keys);
@@ -28,7 +29,10 @@ namespace MyLobbyAD
                 ChangeToRun();
             }
         }
-
+        public void UpdatePreviousDate()
+        {
+            previousUpdate.Text = StorageService.GetStrPreviousUpdate(); ;
+        }
         private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -37,7 +41,7 @@ namespace MyLobbyAD
         {
             Run.Text = "Stop";
             Run.UseAccentColor = true;
-            timerInfo.Text = $"Time to update: {SchedulerService.ConvertStrInterval()}";
+            timerInfo.Text = $"Next update in: {SchedulerService.ConvertStrInterval()}";
             timerInfo.Visible = true;
             mainForm?.StartTimer(timerInfo.Text);
         }

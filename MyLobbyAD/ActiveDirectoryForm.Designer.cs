@@ -46,6 +46,7 @@ namespace MyLobbyAD
             this.domainName = new System.Windows.Forms.Label();
             this.timerInfo = new MaterialSkin.Controls.MaterialLabel();
             this.loader = new System.Windows.Forms.PictureBox();
+            this.previousUpdate = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.settingPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loader)).BeginInit();
             this.SuspendLayout();
@@ -60,13 +61,13 @@ namespace MyLobbyAD
             this.LoginButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LoginButton.HighEmphasis = true;
             this.LoginButton.Icon = null;
-            this.LoginButton.Location = new System.Drawing.Point(53, 453);
+            this.LoginButton.Location = new System.Drawing.Point(53, 471);
             this.LoginButton.Margin = new System.Windows.Forms.Padding(5);
             this.LoginButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(287, 53);
             this.LoginButton.TabIndex = 8;
-            this.LoginButton.Text = "Upload users";
+            this.LoginButton.Text = "Update immediately";
             this.LoginButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.LoginButton.UseAccentColor = false;
             this.LoginButton.UseVisualStyleBackColor = true;
@@ -79,7 +80,7 @@ namespace MyLobbyAD
             this.Domain.Depth = 0;
             this.Domain.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.Domain.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.Domain.Location = new System.Drawing.Point(32, 263);
+            this.Domain.Location = new System.Drawing.Point(32, 249);
             this.Domain.MouseState = MaterialSkin.MouseState.HOVER;
             this.Domain.Name = "Domain";
             this.Domain.Size = new System.Drawing.Size(172, 29);
@@ -117,7 +118,7 @@ namespace MyLobbyAD
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
-            this.materialLabel3.Location = new System.Drawing.Point(61, 196);
+            this.materialLabel3.Location = new System.Drawing.Point(61, 188);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(45, 19);
@@ -130,7 +131,7 @@ namespace MyLobbyAD
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel5.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
-            this.materialLabel5.Location = new System.Drawing.Point(61, 371);
+            this.materialLabel5.Location = new System.Drawing.Point(61, 346);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(47, 19);
@@ -143,7 +144,7 @@ namespace MyLobbyAD
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
-            this.materialLabel4.Location = new System.Drawing.Point(61, 152);
+            this.materialLabel4.Location = new System.Drawing.Point(61, 148);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(51, 19);
@@ -155,22 +156,22 @@ namespace MyLobbyAD
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label1.Location = new System.Drawing.Point(125, 153);
+            this.label1.Location = new System.Drawing.Point(119, 146);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 23);
+            this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Secure Connection";
+            this.label1.Text = "Connected";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label2.Location = new System.Drawing.Point(121, 325);
+            this.label2.Location = new System.Drawing.Point(121, 303);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 23);
+            this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 21;
-            this.label2.Text = "Secure Connection";
+            this.label2.Text = "Connected";
             // 
             // materialLabel1
             // 
@@ -178,7 +179,7 @@ namespace MyLobbyAD
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
-            this.materialLabel1.Location = new System.Drawing.Point(61, 324);
+            this.materialLabel1.Location = new System.Drawing.Point(61, 305);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(51, 19);
@@ -190,7 +191,7 @@ namespace MyLobbyAD
             this.username.AutoSize = true;
             this.username.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.username.ForeColor = System.Drawing.Color.Black;
-            this.username.Location = new System.Drawing.Point(118, 196);
+            this.username.Location = new System.Drawing.Point(118, 185);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(100, 24);
             this.username.TabIndex = 23;
@@ -201,7 +202,7 @@ namespace MyLobbyAD
             this.domainName.AutoSize = true;
             this.domainName.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.domainName.ForeColor = System.Drawing.Color.Black;
-            this.domainName.Location = new System.Drawing.Point(121, 371);
+            this.domainName.Location = new System.Drawing.Point(114, 344);
             this.domainName.Name = "domainName";
             this.domainName.Size = new System.Drawing.Size(131, 24);
             this.domainName.TabIndex = 24;
@@ -212,7 +213,7 @@ namespace MyLobbyAD
             this.timerInfo.AutoSize = true;
             this.timerInfo.Depth = 0;
             this.timerInfo.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.timerInfo.Location = new System.Drawing.Point(53, 419);
+            this.timerInfo.Location = new System.Drawing.Point(53, 434);
             this.timerInfo.MouseState = MaterialSkin.MouseState.HOVER;
             this.timerInfo.Name = "timerInfo";
             this.timerInfo.Size = new System.Drawing.Size(65, 19);
@@ -224,7 +225,7 @@ namespace MyLobbyAD
             // 
             this.loader.BackColor = System.Drawing.Color.Transparent;
             this.loader.Image = ((System.Drawing.Image)(resources.GetObject("loader.Image")));
-            this.loader.Location = new System.Drawing.Point(175, 459);
+            this.loader.Location = new System.Drawing.Point(175, 477);
             this.loader.Name = "loader";
             this.loader.Size = new System.Drawing.Size(45, 45);
             this.loader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -232,12 +233,25 @@ namespace MyLobbyAD
             this.loader.TabStop = false;
             this.loader.Visible = false;
             // 
+            // previousUpdate
+            // 
+            this.previousUpdate.AutoSize = true;
+            this.previousUpdate.Depth = 0;
+            this.previousUpdate.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.previousUpdate.Location = new System.Drawing.Point(53, 398);
+            this.previousUpdate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.previousUpdate.Name = "previousUpdate";
+            this.previousUpdate.Size = new System.Drawing.Size(188, 19);
+            this.previousUpdate.TabIndex = 27;
+            this.previousUpdate.Text = "Previous update: unknown";
+            // 
             // ActiveDirectoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(400, 549);
+            this.Controls.Add(this.previousUpdate);
             this.Controls.Add(this.loader);
             this.Controls.Add(this.timerInfo);
             this.Controls.Add(this.domainName);
@@ -253,6 +267,9 @@ namespace MyLobbyAD
             this.Controls.Add(this.Domain);
             this.Controls.Add(this.LoginButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(400, 549);
+            this.MinimumSize = new System.Drawing.Size(400, 549);
             this.Name = "ActiveDirectoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Synchronization";
@@ -277,5 +294,6 @@ namespace MyLobbyAD
         private System.Windows.Forms.Label domainName;
         public MaterialSkin.Controls.MaterialLabel timerInfo;
         public System.Windows.Forms.PictureBox loader;
+        public MaterialSkin.Controls.MaterialLabel previousUpdate;
     }
 }

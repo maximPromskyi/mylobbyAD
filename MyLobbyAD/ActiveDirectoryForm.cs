@@ -20,8 +20,10 @@ namespace MyLobbyAD
         {
             InitializeComponent();
             SchedulerService.SetADForm(this);
+            StorageService.CreateStorage();
             username.Text = StorageService.InfoData.Email == null ? "unknown" : StorageService.InfoData.Email;
             domainName.Text = ActiveDirectory.GetDomain();
+            UpdatePreviousDate();
             SchedulerService.СheckLaunch();
             if (SchedulerService.Enabled)
             {
@@ -33,11 +35,16 @@ namespace MyLobbyAD
             SettingForm settingForm = new SettingForm(this);
             settingForm.Show();
         }
-
+        public void UpdatePreviousDate()
+        { 
+            previousUpdate.Text = StorageService.GetStrPreviousUpdate(); ;
+        }
         private async void LoginButton_Click(object sender, EventArgs e)
         {
             StartLoader();
             await ApiService.UploadUsers();
+            StorageService.SetPreviousUpdate(DateTime.Now);
+            UpdatePreviousDate();
             StopLoader();
             Success();
         }

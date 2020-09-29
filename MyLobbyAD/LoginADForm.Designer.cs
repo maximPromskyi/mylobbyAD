@@ -74,7 +74,7 @@
             this.LoginButton.HighEmphasis = true;
             this.LoginButton.Icon = null;
             this.LoginButton.Location = new System.Drawing.Point(96, 331);
-            this.LoginButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(5);
             this.LoginButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(208, 45);
@@ -165,6 +165,9 @@
             this.Controls.Add(this.password);
             this.Controls.Add(this.domainName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = this.ClientSize;
+            this.MinimumSize = this.ClientSize;
             this.Name = "LoginADForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Active Directory";

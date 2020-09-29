@@ -49,6 +49,19 @@ namespace MyLobbyAD.Services
             _data.Key = key;
             SaveData();
         }
+        public static void SetPreviousUpdate(DateTime previousUpdate)
+        {
+            _data.PreviousUpdate = previousUpdate;
+            SaveData();
+        }
+        public static string GetStrPreviousUpdate()
+        {
+            if (_data.PreviousUpdate == new DateTime())
+            {
+                return "Last update: unknown";
+            }
+            return $"Last update: {_data.PreviousUpdate}";
+        }
         public static void GetData()
         {
             _data = _isoStore.LoadObject<UserData>(FILENAME);
