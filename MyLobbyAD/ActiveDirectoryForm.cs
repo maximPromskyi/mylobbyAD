@@ -29,9 +29,8 @@ namespace MyLobbyAD
         }
         private void getInfoData()
         {
-            StorageService.CreateStorage();
             string eml = StorageService.InfoData.Email == null ? "unknown" : StorageService.InfoData.Email;
-            email.Text = eml.Length > 20 ? $"{eml.Substring(0, 20)}..." : eml;
+            email.Text = eml.Length > 38 ? $"{eml.Substring(0, 38)}..." : eml;
             domainName.Text = ActiveDirectory.GetDomain();
             serverName.Text = ActiveDirectory.GetServerName();
             UpdateTable();
@@ -44,10 +43,14 @@ namespace MyLobbyAD
             {
                 int num = dataGridView1.Rows.Add();
                 dataGridView1.Rows[num].Cells[0].Value = user.Name;
-                dataGridView1.Rows[num].Cells[1].Value = user.Company;
-                dataGridView1.Rows[num].Cells[2].Value = user.JobTitle;
-                dataGridView1.Rows[num].Cells[3].Value = user.Email;
-                dataGridView1.Rows[num].Cells[4].Value = user.PhoneVoice;
+                dataGridView1.Rows[num].Cells[1].Value = 
+                    (user.Company == null || user.Company == String.Empty) ? "missing" : user.Company;
+                dataGridView1.Rows[num].Cells[2].Value =
+                    (user.JobTitle == null || user.JobTitle == String.Empty) ? "missing" : user.JobTitle;
+                dataGridView1.Rows[num].Cells[3].Value =
+                    (user.Email == null || user.Email == String.Empty) ? "missing" : user.Email;
+                dataGridView1.Rows[num].Cells[4].Value =
+                    (user.PhoneSms == null || user.PhoneSms == String.Empty) ? "missing" : user.PhoneSms;
             }
         }
         private void Setting_Click(object sender, EventArgs e)
