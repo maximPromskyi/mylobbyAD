@@ -51,3 +51,4 @@ C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Release\netcoreapp3.1\MyLob
 C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Release\netcoreapp3.1\MyLobbyAD.pdb
 C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Release\netcoreapp3.1\MyLobbyAD.genruntimeconfig.cache
 C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Release\netcoreapp3.1\MyLobbyAD.csprojAssemblyReference.cache
+C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\obj\Release\netcoreapp3.1\MyLobbyAD.csprojAssemblyReference.cache

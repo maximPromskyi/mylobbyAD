@@ -20,7 +20,8 @@ namespace MyLobbyAD
         {
             InitializeComponent();
             SchedulerService.SetADForm(this);
-            username.Text = StorageService.InfoData.Email == null ? "unknown" : StorageService.InfoData.Email;
+            string eml = StorageService.InfoData.Email == null ? "unknown" : StorageService.InfoData.Email;
+            email.Text = eml.Length > 20 ? $"{eml.Substring(0, 20)}..." : eml;
             domainName.Text = ActiveDirectory.GetDomain();
             UpdatePreviousDate();
             SchedulerService.СheckLaunch();
@@ -45,11 +46,6 @@ namespace MyLobbyAD
             StorageService.SetPreviousUpdate(DateTime.Now);
             UpdatePreviousDate();
             StopLoader();
-            Success();
-        }
-        public void Success()
-        {
-            MessageBox.Show("Data updated", "Success");
         }
         public void StartTimer(string tInfo)
         {

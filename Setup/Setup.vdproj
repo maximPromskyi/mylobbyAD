@@ -21,13 +21,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2952052565424814A6221019E6920BD9"
+        "MsmKey" = "8:_1449539DDFD64B19A5EC229FB5CC0C36"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_7C10F20E91784EDABF034A19979AAE13"
+        "MsmKey" = "8:_2952052565424814A6221019E6920BD9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -128,9 +128,9 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7C10F20E91784EDABF034A19979AAE13"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1449539DDFD64B19A5EC229FB5CC0C36"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\MyLobby-logo.ico"
+            "SourcePath" = "8:..\\MyLobbyAD\\MyLobby-logo.ico"
             "TargetName" = "8:MyLobby-logo.ico"
             "Tag" = "8:"
             "Folder" = "8:_749CFC5E76494753AFCA10564FD414CB"
@@ -347,7 +347,7 @@
             "Target" = "8:_2952052565424814A6221019E6920BD9"
             "Folder" = "8:_231233CA671D4FA5B115DA29CE6A996D"
             "WorkingFolder" = "8:_749CFC5E76494753AFCA10564FD414CB"
-            "Icon" = "8:_7C10F20E91784EDABF034A19979AAE13"
+            "Icon" = "8:_1449539DDFD64B19A5EC229FB5CC0C36"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E2C55B08F5D0411B9533BC2DAE85DD03"
@@ -361,7 +361,7 @@
             "Target" = "8:_2952052565424814A6221019E6920BD9"
             "Folder" = "8:_9515F3739E4140799E2D41DDAE0FA7AB"
             "WorkingFolder" = "8:_749CFC5E76494753AFCA10564FD414CB"
-            "Icon" = "8:_7C10F20E91784EDABF034A19979AAE13"
+            "Icon" = "8:_1449539DDFD64B19A5EC229FB5CC0C36"
             "Feature" = "8:"
             }
         }
