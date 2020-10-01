@@ -111,5 +111,14 @@ namespace MyLobbyAD.Services
             }
             return "unknown";
         }
+        public static string GetServerName()
+        {
+            if (IsConnect && searcher?.Context?.ConnectedServer != null)
+            {
+                return searcher.Context.ConnectedServer;
+            }
+            return "unknown";
+        }
+
     }
 }

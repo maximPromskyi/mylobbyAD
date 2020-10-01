@@ -103,7 +103,7 @@ namespace MyLobbyAD.Services
 
                     timer.Change(Timeout.Infinite, Timeout.Infinite);
 
-                    await ApiService.UploadUsers();
+                    // await ApiService.UploadUsers();
                     StorageService.SetPreviousUpdate(NextUpdate);
                     UpdateInterval();
                     timer = new Timer(tm, 1, 0, period);
