@@ -90,6 +90,11 @@ namespace MyLobbyAD.Services
             }
             SaveData();
         }
+        public static void SetPropetiesAD(Dictionary<string, bool> propertiesAD)
+        {
+            _data.PropertiesAD = propertiesAD;
+            SaveData();
+        }
         public static string GetStrPreviousUpdate()
         {
             if (_data.PreviousUpdate == new DateTime())

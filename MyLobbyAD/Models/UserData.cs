@@ -15,5 +15,13 @@ namespace MyLobbyAD.Models
         public DateTime PreviousUpdate { get; set; }
         public string Key { get; set; }
         public Dictionary<Guid, bool> InfoSyncs { get; set; }
+        public Dictionary<string, bool> PropertiesAD { get; set; } = new Dictionary<string, bool>
+        {
+            ["Name"] = true,
+            ["Company"] = true,
+            ["JobTitle"] = true,
+            ["Email"] = true,
+            ["Phone"] = true
+        };
     }
 }

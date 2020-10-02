@@ -34,9 +34,9 @@ namespace MyLobbyAD
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActiveDirectoryForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LoginButton = new MaterialSkin.Controls.MaterialButton();
             this.settingPicture = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,11 +63,12 @@ namespace MyLobbyAD
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.materialCheckbox2 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.materialCheckbox3 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.materialCheckbox4 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.materialCheckbox5 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.IsSyncName = new MaterialSkin.Controls.MaterialCheckbox();
+            this.IsSyncCompany = new MaterialSkin.Controls.MaterialCheckbox();
+            this.IsSyncJobTitle = new MaterialSkin.Controls.MaterialCheckbox();
+            this.IsSyncEmail = new MaterialSkin.Controls.MaterialCheckbox();
+            this.IsSyncPhone = new MaterialSkin.Controls.MaterialCheckbox();
+            this.Save = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.settingPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -185,20 +186,20 @@ namespace MyLobbyAD
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IsSynchron,
@@ -209,21 +210,22 @@ namespace MyLobbyAD
             this.Email,
             this.PhoneSms,
             this.UserId});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(1, 135);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowHeadersWidth = 4;
             this.dataGridView1.Size = new System.Drawing.Size(845, 312);
             this.dataGridView1.TabIndex = 28;
+            this.dataGridView1.RowTemplate.Height = 80;
             // 
             // IsSynchron
             // 
@@ -387,80 +389,99 @@ namespace MyLobbyAD
             this.label2.TabIndex = 30;
             this.label2.Text = "Select fields to upload";
             // 
-            // materialCheckbox1
+            // IsSyncName
             // 
-            this.materialCheckbox1.AutoSize = true;
-            this.materialCheckbox1.Depth = 0;
-            this.materialCheckbox1.Location = new System.Drawing.Point(40, 486);
-            this.materialCheckbox1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox1.Name = "materialCheckbox1";
-            this.materialCheckbox1.Ripple = true;
-            this.materialCheckbox1.Size = new System.Drawing.Size(77, 37);
-            this.materialCheckbox1.TabIndex = 31;
-            this.materialCheckbox1.Text = "Name";
-            this.materialCheckbox1.UseVisualStyleBackColor = true;
+            this.IsSyncName.AutoSize = true;
+            this.IsSyncName.Depth = 0;
+            this.IsSyncName.Location = new System.Drawing.Point(40, 486);
+            this.IsSyncName.Margin = new System.Windows.Forms.Padding(0);
+            this.IsSyncName.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.IsSyncName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.IsSyncName.Name = "IsSyncName";
+            this.IsSyncName.Ripple = true;
+            this.IsSyncName.Size = new System.Drawing.Size(77, 37);
+            this.IsSyncName.TabIndex = 31;
+            this.IsSyncName.Text = "Name";
+            this.IsSyncName.UseVisualStyleBackColor = true;
             // 
-            // materialCheckbox2
+            // IsSyncCompany
             // 
-            this.materialCheckbox2.AutoSize = true;
-            this.materialCheckbox2.Depth = 0;
-            this.materialCheckbox2.Location = new System.Drawing.Point(40, 518);
-            this.materialCheckbox2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox2.Name = "materialCheckbox2";
-            this.materialCheckbox2.Ripple = true;
-            this.materialCheckbox2.Size = new System.Drawing.Size(103, 37);
-            this.materialCheckbox2.TabIndex = 32;
-            this.materialCheckbox2.Text = "Company";
-            this.materialCheckbox2.UseVisualStyleBackColor = true;
+            this.IsSyncCompany.AutoSize = true;
+            this.IsSyncCompany.Depth = 0;
+            this.IsSyncCompany.Location = new System.Drawing.Point(40, 518);
+            this.IsSyncCompany.Margin = new System.Windows.Forms.Padding(0);
+            this.IsSyncCompany.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.IsSyncCompany.MouseState = MaterialSkin.MouseState.HOVER;
+            this.IsSyncCompany.Name = "IsSyncCompany";
+            this.IsSyncCompany.Ripple = true;
+            this.IsSyncCompany.Size = new System.Drawing.Size(103, 37);
+            this.IsSyncCompany.TabIndex = 32;
+            this.IsSyncCompany.Text = "Company";
+            this.IsSyncCompany.UseVisualStyleBackColor = true;
             // 
-            // materialCheckbox3
+            // IsSyncJobTitle
             // 
-            this.materialCheckbox3.AutoSize = true;
-            this.materialCheckbox3.Depth = 0;
-            this.materialCheckbox3.Location = new System.Drawing.Point(40, 552);
-            this.materialCheckbox3.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox3.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox3.Name = "materialCheckbox3";
-            this.materialCheckbox3.Ripple = true;
-            this.materialCheckbox3.Size = new System.Drawing.Size(97, 37);
-            this.materialCheckbox3.TabIndex = 33;
-            this.materialCheckbox3.Text = "Job Title";
-            this.materialCheckbox3.UseVisualStyleBackColor = true;
+            this.IsSyncJobTitle.AutoSize = true;
+            this.IsSyncJobTitle.Depth = 0;
+            this.IsSyncJobTitle.Location = new System.Drawing.Point(40, 552);
+            this.IsSyncJobTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.IsSyncJobTitle.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.IsSyncJobTitle.MouseState = MaterialSkin.MouseState.HOVER;
+            this.IsSyncJobTitle.Name = "IsSyncJobTitle";
+            this.IsSyncJobTitle.Ripple = true;
+            this.IsSyncJobTitle.Size = new System.Drawing.Size(97, 37);
+            this.IsSyncJobTitle.TabIndex = 33;
+            this.IsSyncJobTitle.Text = "Job Title";
+            this.IsSyncJobTitle.UseVisualStyleBackColor = true;
             // 
-            // materialCheckbox4
+            // IsSyncEmail
             // 
-            this.materialCheckbox4.AutoSize = true;
-            this.materialCheckbox4.Depth = 0;
-            this.materialCheckbox4.Location = new System.Drawing.Point(160, 486);
-            this.materialCheckbox4.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox4.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox4.Name = "materialCheckbox4";
-            this.materialCheckbox4.Ripple = true;
-            this.materialCheckbox4.Size = new System.Drawing.Size(75, 37);
-            this.materialCheckbox4.TabIndex = 34;
-            this.materialCheckbox4.Text = "Email";
-            this.materialCheckbox4.UseVisualStyleBackColor = true;
+            this.IsSyncEmail.AutoSize = true;
+            this.IsSyncEmail.Depth = 0;
+            this.IsSyncEmail.Location = new System.Drawing.Point(160, 486);
+            this.IsSyncEmail.Margin = new System.Windows.Forms.Padding(0);
+            this.IsSyncEmail.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.IsSyncEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.IsSyncEmail.Name = "IsSyncEmail";
+            this.IsSyncEmail.Ripple = true;
+            this.IsSyncEmail.Size = new System.Drawing.Size(75, 37);
+            this.IsSyncEmail.TabIndex = 34;
+            this.IsSyncEmail.Text = "Email";
+            this.IsSyncEmail.UseVisualStyleBackColor = true;
             // 
-            // materialCheckbox5
+            // IsSyncPhone
             // 
-            this.materialCheckbox5.AutoSize = true;
-            this.materialCheckbox5.Depth = 0;
-            this.materialCheckbox5.Location = new System.Drawing.Point(160, 518);
-            this.materialCheckbox5.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox5.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox5.Name = "materialCheckbox5";
-            this.materialCheckbox5.Ripple = true;
-            this.materialCheckbox5.Size = new System.Drawing.Size(167, 37);
-            this.materialCheckbox5.TabIndex = 35;
-            this.materialCheckbox5.Text = "Telephone number";
-            this.materialCheckbox5.UseVisualStyleBackColor = true;
+            this.IsSyncPhone.AutoSize = true;
+            this.IsSyncPhone.Depth = 0;
+            this.IsSyncPhone.Location = new System.Drawing.Point(160, 518);
+            this.IsSyncPhone.Margin = new System.Windows.Forms.Padding(0);
+            this.IsSyncPhone.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.IsSyncPhone.MouseState = MaterialSkin.MouseState.HOVER;
+            this.IsSyncPhone.Name = "IsSyncPhone";
+            this.IsSyncPhone.Ripple = true;
+            this.IsSyncPhone.Size = new System.Drawing.Size(167, 37);
+            this.IsSyncPhone.TabIndex = 35;
+            this.IsSyncPhone.Text = "Telephone number";
+            this.IsSyncPhone.UseVisualStyleBackColor = true;
+            // 
+            // Save
+            // 
+            this.Save.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Save.Depth = 0;
+            this.Save.DrawShadows = true;
+            this.Save.HighEmphasis = true;
+            this.Save.Icon = null;
+            this.Save.Location = new System.Drawing.Point(331, 464);
+            this.Save.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Save.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(120, 36);
+            this.Save.TabIndex = 36;
+            this.Save.Text = "Save Change";
+            this.Save.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Save.UseAccentColor = false;
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // ActiveDirectoryForm
             // 
@@ -468,11 +489,12 @@ namespace MyLobbyAD
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(847, 607);
-            this.Controls.Add(this.materialCheckbox5);
-            this.Controls.Add(this.materialCheckbox4);
-            this.Controls.Add(this.materialCheckbox3);
-            this.Controls.Add(this.materialCheckbox2);
-            this.Controls.Add(this.materialCheckbox1);
+            this.Controls.Add(this.Save);
+            this.Controls.Add(this.IsSyncPhone);
+            this.Controls.Add(this.IsSyncEmail);
+            this.Controls.Add(this.IsSyncJobTitle);
+            this.Controls.Add(this.IsSyncCompany);
+            this.Controls.Add(this.IsSyncName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
@@ -515,11 +537,11 @@ namespace MyLobbyAD
         private Label label8;
         private Label serverName;
         private Label label2;
-        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox1;
-        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox2;
-        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox3;
-        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox4;
-        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox5;
+        private MaterialSkin.Controls.MaterialCheckbox IsSyncName;
+        private MaterialSkin.Controls.MaterialCheckbox IsSyncCompany;
+        private MaterialSkin.Controls.MaterialCheckbox IsSyncJobTitle;
+        private MaterialSkin.Controls.MaterialCheckbox IsSyncEmail;
+        private MaterialSkin.Controls.MaterialCheckbox IsSyncPhone;
         private DataGridViewCheckBoxColumn IsSynchron;
         private DataGridViewImageColumn Photo;
         private DataGridViewTextBoxColumn UserName;
@@ -528,5 +550,6 @@ namespace MyLobbyAD
         private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn PhoneSms;
         private DataGridViewTextBoxColumn UserId;
+        private MaterialSkin.Controls.MaterialButton Save;
     }
 }

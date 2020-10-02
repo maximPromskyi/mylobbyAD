@@ -34,9 +34,12 @@ namespace MyLobbyAD
             emailLabel.Text = eml.Length > 38 ? $"{eml.Substring(0, 38)}..." : eml;
             domainName.Text = ActiveDirectory.GetDomain();
             serverName.Text = ActiveDirectory.GetServerName();
-            this.dataGridView1.Columns["IsSynchron"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView1.RowTemplate.Height = 80;
-            this.dataGridView1.RowHeadersWidth = 4;
+            dataGridView1.Columns["IsSynchron"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            IsSyncName.Checked = StorageService.InfoData.PropertiesAD["Name"];
+            IsSyncCompany.Checked = StorageService.InfoData.PropertiesAD["Company"];
+            IsSyncJobTitle.Checked = StorageService.InfoData.PropertiesAD["JobTitle"];
+            IsSyncEmail.Checked = StorageService.InfoData.PropertiesAD["Email"];
+            IsSyncPhone.Checked = StorageService.InfoData.PropertiesAD["Phone"];
             UpdateTable();
             UpdatePreviousDate();
         }
@@ -44,11 +47,10 @@ namespace MyLobbyAD
         {
             List<User> users = ActiveDirectory.GetUsers();
             StorageService.UpdateInfoSyncs(users.Select(u => u.Id).ToList());
-            Dictionary<Guid, bool> infoSyncs = StorageService.InfoData.InfoSyncs;
             foreach (User user in users)
             {
                 int num = dataGridView1.Rows.Add();
-                dataGridView1.Rows[num].Cells["IsSynchron"].Value = infoSyncs[user.Id];
+                dataGridView1.Rows[num].Cells["IsSynchron"].Value = StorageService.InfoData.InfoSyncs[user.Id];
                 dataGridView1.Rows[num].Cells["UserName"].Value = user.Name;
                 dataGridView1.Rows[num].Cells["Company"].Value =
                     (user.Company == null || user.Company == String.Empty) ? "-" : user.Company;
@@ -100,7 +102,7 @@ namespace MyLobbyAD
             LoginButton.Text = "Upload users";
         }
 
-        private void SaveChange_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             Dictionary<Guid, bool> infoSyncs = new Dictionary<Guid, bool>();
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -110,7 +112,19 @@ namespace MyLobbyAD
                     Convert.ToBoolean(dataGridView1.Rows[i].Cells["IsSynchron"].Value)
                 );
             }
+
             StorageService.SetInfoSyncs(infoSyncs);
+
+            Dictionary<string, bool> propertiesAD = new Dictionary<string, bool>
+            {
+                ["Name"] = IsSyncName.Checked,
+                ["Company"] = IsSyncCompany.Checked,
+                ["JobTitle"] = IsSyncJobTitle.Checked,
+                ["Email"] = IsSyncEmail.Checked,
+                ["Phone"] = IsSyncPhone.Checked
+            };
+
+            StorageService.SetPropetiesAD(propertiesAD);
         }
     }
 }
