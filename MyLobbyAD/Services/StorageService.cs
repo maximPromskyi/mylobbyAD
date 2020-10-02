@@ -3,6 +3,7 @@ using MyLobbyAD.Models;
 using System;
 using System.Collections.Generic;
 using System.IO.IsolatedStorage;
+using System.Linq;
 using System.Text;
 
 namespace MyLobbyAD.Services
@@ -52,6 +53,41 @@ namespace MyLobbyAD.Services
         public static void SetPreviousUpdate(DateTime previousUpdate)
         {
             _data.PreviousUpdate = previousUpdate;
+            SaveData();
+        }
+        public static void SetInfoSyncs(Dictionary<Guid, bool> infoSyncs)
+        {
+            _data.InfoSyncs = infoSyncs;
+            SaveData();
+        }
+        public static void RemoveInfoSyncs(List<Guid> usersId)
+        {
+            List<Guid> usersIdRemove = _data.InfoSyncs
+                .Where(data => !usersId.Contains(data.Key))
+                .Select(data => data.Key)
+                .ToList();
+            foreach (var userId in usersIdRemove)
+            {
+                _data.InfoSyncs.Remove(userId);
+            }
+        }
+        public static void UpdateInfoSyncs(List<Guid> usersId)
+        {
+            if (_data.InfoSyncs == null)
+            {
+                _data.InfoSyncs = new Dictionary<Guid, bool>();
+            }
+            else
+            {
+                RemoveInfoSyncs(usersId);
+            }
+            foreach (var userId in usersId)
+            {
+                if (!_data.InfoSyncs.ContainsKey(userId))
+                {
+                    _data.InfoSyncs.Add(userId, true);
+                }
+            }
             SaveData();
         }
         public static string GetStrPreviousUpdate()

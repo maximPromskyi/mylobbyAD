@@ -100,6 +100,7 @@ namespace MyLobbyAD.Services
                 Email = dirEntry.Properties["mail"]?.Value?.ToString() == null ? "" : dirEntry.Properties["mail"]?.Value?.ToString(),
                 PhoneSms = dirEntry.Properties["telephoneNumber"]?.Value?.ToString() == null ? "" : dirEntry.Properties["telephoneNumber"]?.Value?.ToString(),
                 PhoneVoice = dirEntry.Properties["telephoneNumber"]?.Value?.ToString() == null ? "" : dirEntry.Properties["telephoneNumber"]?.Value?.ToString(),
+                Image = dirEntry.Properties["thumbnailPhoto"]?.Value,
                 AccountId = StorageService.InfoData.AccountId
             };
         }

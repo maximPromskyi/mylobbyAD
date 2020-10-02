@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Buffers.Text;
 using System.Collections.Generic;
 using System.Text;
 
@@ -34,5 +35,7 @@ namespace MyLobbyAD.Models
         [JsonProperty(PropertyName = "id")]
         public string EmployeeId { get; set; }
 
+        [JsonIgnore]
+        public object Image { get; set; }
     }
 }
