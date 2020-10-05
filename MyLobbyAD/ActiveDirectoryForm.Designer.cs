@@ -34,9 +34,9 @@ namespace MyLobbyAD
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActiveDirectoryForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LoginButton = new MaterialSkin.Controls.MaterialButton();
             this.settingPicture = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,12 +63,12 @@ namespace MyLobbyAD
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.IsSyncName = new MaterialSkin.Controls.MaterialCheckbox();
             this.IsSyncCompany = new MaterialSkin.Controls.MaterialCheckbox();
             this.IsSyncJobTitle = new MaterialSkin.Controls.MaterialCheckbox();
             this.IsSyncEmail = new MaterialSkin.Controls.MaterialCheckbox();
             this.IsSyncPhone = new MaterialSkin.Controls.MaterialCheckbox();
             this.Save = new MaterialSkin.Controls.MaterialButton();
+            this.IsSyncName = new MaterialSkin.Controls.MaterialCheckbox();
             ((System.ComponentModel.ISupportInitialize)(this.settingPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -103,7 +103,7 @@ namespace MyLobbyAD
             this.settingPicture.BackColor = System.Drawing.Color.Transparent;
             this.settingPicture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.settingPicture.Image = ((System.Drawing.Image)(resources.GetObject("settingPicture.Image")));
-            this.settingPicture.Location = new System.Drawing.Point(802, 24);
+            this.settingPicture.Location = new System.Drawing.Point(843, 24);
             this.settingPicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.settingPicture.Name = "settingPicture";
             this.settingPicture.Size = new System.Drawing.Size(33, 33);
@@ -116,7 +116,7 @@ namespace MyLobbyAD
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto Medium", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(13, 8);
+            this.label1.Location = new System.Drawing.Point(25, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(152, 18);
             this.label1.TabIndex = 19;
@@ -127,7 +127,7 @@ namespace MyLobbyAD
             this.emailLabel.AutoSize = true;
             this.emailLabel.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.emailLabel.ForeColor = System.Drawing.Color.White;
-            this.emailLabel.Location = new System.Drawing.Point(488, 30);
+            this.emailLabel.Location = new System.Drawing.Point(500, 30);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(45, 18);
             this.emailLabel.TabIndex = 23;
@@ -138,7 +138,7 @@ namespace MyLobbyAD
             this.domainName.AutoSize = true;
             this.domainName.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.domainName.ForeColor = System.Drawing.Color.White;
-            this.domainName.Location = new System.Drawing.Point(72, 28);
+            this.domainName.Location = new System.Drawing.Point(84, 28);
             this.domainName.Name = "domainName";
             this.domainName.Size = new System.Drawing.Size(105, 19);
             this.domainName.TabIndex = 24;
@@ -186,20 +186,20 @@ namespace MyLobbyAD
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IsSynchron,
@@ -210,22 +210,21 @@ namespace MyLobbyAD
             this.Email,
             this.PhoneSms,
             this.UserId});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(1, 135);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 4;
-            this.dataGridView1.Size = new System.Drawing.Size(845, 312);
+            this.dataGridView1.Size = new System.Drawing.Size(889, 312);
             this.dataGridView1.TabIndex = 28;
-            this.dataGridView1.RowTemplate.Height = 80;
             // 
             // IsSynchron
             // 
@@ -299,7 +298,7 @@ namespace MyLobbyAD
             this.panel1.Location = new System.Drawing.Point(0, 61);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(846, 74);
+            this.panel1.Size = new System.Drawing.Size(890, 74);
             this.panel1.TabIndex = 29;
             // 
             // label8
@@ -307,7 +306,7 @@ namespace MyLobbyAD
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(12, 51);
+            this.label8.Location = new System.Drawing.Point(24, 51);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 19);
             this.label8.TabIndex = 35;
@@ -318,7 +317,7 @@ namespace MyLobbyAD
             this.serverName.AutoSize = true;
             this.serverName.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.serverName.ForeColor = System.Drawing.Color.White;
-            this.serverName.Location = new System.Drawing.Point(79, 52);
+            this.serverName.Location = new System.Drawing.Point(91, 52);
             this.serverName.Name = "serverName";
             this.serverName.Size = new System.Drawing.Size(93, 19);
             this.serverName.TabIndex = 34;
@@ -329,7 +328,7 @@ namespace MyLobbyAD
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto Medium", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(429, 7);
+            this.label7.Location = new System.Drawing.Point(441, 7);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(152, 18);
             this.label7.TabIndex = 33;
@@ -340,7 +339,7 @@ namespace MyLobbyAD
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(430, 29);
+            this.label6.Location = new System.Drawing.Point(442, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 19);
             this.label6.TabIndex = 32;
@@ -351,7 +350,7 @@ namespace MyLobbyAD
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(12, 28);
+            this.label5.Location = new System.Drawing.Point(24, 28);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 19);
             this.label5.TabIndex = 30;
@@ -362,7 +361,7 @@ namespace MyLobbyAD
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(591, 4);
+            this.label4.Location = new System.Drawing.Point(603, 4);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 23);
             this.label4.TabIndex = 31;
@@ -373,7 +372,7 @@ namespace MyLobbyAD
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(171, 4);
+            this.label3.Location = new System.Drawing.Point(183, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 23);
             this.label3.TabIndex = 30;
@@ -388,21 +387,6 @@ namespace MyLobbyAD
             this.label2.Size = new System.Drawing.Size(199, 23);
             this.label2.TabIndex = 30;
             this.label2.Text = "Select fields to upload";
-            // 
-            // IsSyncName
-            // 
-            this.IsSyncName.AutoSize = true;
-            this.IsSyncName.Depth = 0;
-            this.IsSyncName.Location = new System.Drawing.Point(40, 486);
-            this.IsSyncName.Margin = new System.Windows.Forms.Padding(0);
-            this.IsSyncName.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.IsSyncName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.IsSyncName.Name = "IsSyncName";
-            this.IsSyncName.Ripple = true;
-            this.IsSyncName.Size = new System.Drawing.Size(77, 37);
-            this.IsSyncName.TabIndex = 31;
-            this.IsSyncName.Text = "Name";
-            this.IsSyncName.UseVisualStyleBackColor = true;
             // 
             // IsSyncCompany
             // 
@@ -466,29 +450,49 @@ namespace MyLobbyAD
             // 
             // Save
             // 
+            this.Save.AutoSize = false;
             this.Save.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Save.Depth = 0;
             this.Save.DrawShadows = true;
             this.Save.HighEmphasis = true;
             this.Save.Icon = null;
-            this.Save.Location = new System.Drawing.Point(331, 464);
+            this.Save.Location = new System.Drawing.Point(354, 524);
             this.Save.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Save.MouseState = MaterialSkin.MouseState.HOVER;
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(120, 36);
+            this.Save.Size = new System.Drawing.Size(190, 40);
             this.Save.TabIndex = 36;
-            this.Save.Text = "Save Change";
+            this.Save.Text = "Save Setting";
             this.Save.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Save.UseAccentColor = false;
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
+            // 
+            // IsSyncName
+            // 
+            this.IsSyncName.AutoSize = true;
+            this.IsSyncName.Checked = true;
+            this.IsSyncName.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.IsSyncName.Depth = 0;
+            this.IsSyncName.Enabled = false;
+            this.IsSyncName.Location = new System.Drawing.Point(40, 486);
+            this.IsSyncName.Margin = new System.Windows.Forms.Padding(0);
+            this.IsSyncName.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.IsSyncName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.IsSyncName.Name = "IsSyncName";
+            this.IsSyncName.Ripple = true;
+            this.IsSyncName.Size = new System.Drawing.Size(77, 37);
+            this.IsSyncName.TabIndex = 31;
+            this.IsSyncName.Text = "Name";
+            this.IsSyncName.UseVisualStyleBackColor = true;
             // 
             // ActiveDirectoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(847, 607);
+            this.ClientSize = new System.Drawing.Size(890, 607);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.IsSyncPhone);
             this.Controls.Add(this.IsSyncEmail);
@@ -537,7 +541,6 @@ namespace MyLobbyAD
         private Label label8;
         private Label serverName;
         private Label label2;
-        private MaterialSkin.Controls.MaterialCheckbox IsSyncName;
         private MaterialSkin.Controls.MaterialCheckbox IsSyncCompany;
         private MaterialSkin.Controls.MaterialCheckbox IsSyncJobTitle;
         private MaterialSkin.Controls.MaterialCheckbox IsSyncEmail;
@@ -551,5 +554,6 @@ namespace MyLobbyAD
         private DataGridViewTextBoxColumn PhoneSms;
         private DataGridViewTextBoxColumn UserId;
         private MaterialSkin.Controls.MaterialButton Save;
+        private MaterialSkin.Controls.MaterialCheckbox IsSyncName;
     }
 }

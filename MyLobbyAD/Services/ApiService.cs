@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Net.Http.Headers;
 using System.Linq;
 using System.Net;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace MyLobbyAD.Services
 {
@@ -31,15 +33,27 @@ namespace MyLobbyAD.Services
             var response = await client.GetAsync($"{host}/api/users/{userId}?access_token={token}");
             return response.StatusCode == HttpStatusCode.OK;
         }
-        public static async Task<bool> EmployeeAdd(User user)
+        public static async Task<string> EmployeeAdd(User user)
         {
             var json = JsonConvert.SerializeObject(user);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await client.PostAsync($"{host}/api/employees/add?access_token={StorageService.InfoData.Token}", data);
             string result = response.Content.ReadAsStringAsync().Result;
+            return JsonConvert.DeserializeObject<Employee>(result)?.EmployeeId;
+        }
+        public static async Task<bool> UploadImage(Object image, string employeeId)
+        {
+
+            var byteArrayContent = new ByteArrayContent((byte[])image);
+            MultipartFormDataContent multipart = new MultipartFormDataContent();
+            string imageName = Guid.NewGuid().ToString();
+            multipart.Add(byteArrayContent, "file", imageName);
+            var response = await client.PostAsync($"{host}/api/employees/uploadAvatar/{employeeId}?access_token=" +
+                $"{StorageService.InfoData.Token}", multipart);
+            string result = response.Content.ReadAsStringAsync().Result;
             return result != null;
         }
-        public static async Task<bool> EmployeUpdate(User user)
+        public static async Task<bool> EmployeeUpdate(User user)
         {
             var json = JsonConvert.SerializeObject(user);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
@@ -64,38 +78,34 @@ namespace MyLobbyAD.Services
             List<User> users = ActiveDirectory.GetUsers();
             string[] usersId = users.Select(u => u.Id.ToString()).ToArray();
             LoginInfoModel<EmployeeInfo[], LoginError> employeesInfo = await CheckEmployeeById(usersId);
-            string usersData = "";
-            string usersUpdateData = "";
-            string usersError = "";
+
+            if (employeesInfo.Error != null)
+            {
+                return false;
+            }
+
             foreach (User user in users)
             {
                 EmployeeInfo employeeInfo = employeesInfo.Success
                     .Where(e => e.ActiveDirectoryId == user.Id.ToString())
                     .FirstOrDefault();
-                if (employeeInfo.EmployeeId != null)
+                if (StorageService.InfoData.InfoSyncs[user.Id])
                 {
-                    user.EmployeeId = employeeInfo.EmployeeId;
-                    if (await ApiService.EmployeUpdate(user))
+                    if (employeeInfo.EmployeeId != null)
                     {
-                        usersUpdateData += $"{user.Name}\n";
+                        user.EmployeeId = employeeInfo.EmployeeId;
+                        await EmployeeUpdate(user);
                     }
                     else
                     {
-                        usersError += $"{user.Name}\n";
+                        user.EmployeeId = await EmployeeAdd(user);
                     }
-                }
-                else
-                {
-                    if (await ApiService.EmployeeAdd(user))
-                    {
-                        usersData += $"{user.Name}\n";
-                    }
-                    else
-                    {
-                        usersError += $"{user.Name}\n";
-                    }
-                }
 
+                    if (user.Image != null)
+                    {
+                        await UploadImage(user.Image, user.EmployeeId);
+                    }
+                }
             }
             return true;
         }

@@ -12,6 +12,7 @@ using System.Linq;
 using MyLobbyAD.Services;
 using MaterialSkin.Controls;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace MyLobbyAD
 {
@@ -35,7 +36,8 @@ namespace MyLobbyAD
             domainName.Text = ActiveDirectory.GetDomain();
             serverName.Text = ActiveDirectory.GetServerName();
             dataGridView1.Columns["IsSynchron"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            IsSyncName.Checked = StorageService.InfoData.PropertiesAD["Name"];
+            dataGridView1.RowHeadersWidth = 4;
+            dataGridView1.RowTemplate.Height = 80;
             IsSyncCompany.Checked = StorageService.InfoData.PropertiesAD["Company"];
             IsSyncJobTitle.Checked = StorageService.InfoData.PropertiesAD["JobTitle"];
             IsSyncEmail.Checked = StorageService.InfoData.PropertiesAD["Email"];
@@ -77,10 +79,29 @@ namespace MyLobbyAD
         private async void LoginButton_Click(object sender, EventArgs e)
         {
             StartLoader();
-            await ApiService.UploadUsers();
-            StorageService.SetPreviousUpdate(DateTime.Now);
-            UpdatePreviousDate();
+            bool isSuccess = await ApiService.UploadUsers();
+            if (isSuccess)
+            {
+                StorageService.SetPreviousUpdate(DateTime.Now);
+                UpdatePreviousDate();
+                DisplaySuccess();
+            }
+            else
+            {
+                DisplayError();
+            }
             StopLoader();
+        }
+       
+        public void DisplaySuccess()
+        {
+            SuccessForm successForm = new SuccessForm("Users uploaded!");
+            successForm.Show();
+        }
+        public void DisplayError()
+        {
+            ErrorForm errorForm = new ErrorForm("Upload failed!");
+            errorForm.Show();
         }
         public void StartTimer(string tInfo)
         {
@@ -117,7 +138,6 @@ namespace MyLobbyAD
 
             Dictionary<string, bool> propertiesAD = new Dictionary<string, bool>
             {
-                ["Name"] = IsSyncName.Checked,
                 ["Company"] = IsSyncCompany.Checked,
                 ["JobTitle"] = IsSyncJobTitle.Checked,
                 ["Email"] = IsSyncEmail.Checked,

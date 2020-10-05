@@ -103,18 +103,33 @@ namespace MyLobbyAD.Services
 
                     timer.Change(Timeout.Infinite, Timeout.Infinite);
 
-                    // await ApiService.UploadUsers();
-                    StorageService.SetPreviousUpdate(NextUpdate);
+                    bool isSuccess = await ApiService.UploadUsers();
+                    if (isSuccess)
+                    {
+                        StorageService.SetPreviousUpdate(NextUpdate);
+                    }
                     UpdateInterval();
                     timer = new Timer(tm, 1, 0, period);
                     if (activeDirectoryForm != null && activeDirectoryForm.Created)
                     {
-                        activeDirectoryForm.Invoke(new Action(
-                            () => activeDirectoryForm.UpdatePreviousDate()));
+                        if (isSuccess)
+                        {
+                            activeDirectoryForm.Invoke(new Action(
+                                () =>
+                                {
+                                    activeDirectoryForm.UpdatePreviousDate();
+                                    activeDirectoryForm.DisplaySuccess();
+                                }));
+                        }
+                        else
+                        {
+                            activeDirectoryForm.Invoke(new Action(
+                                () => activeDirectoryForm.DisplayError()));
+                        }
                         activeDirectoryForm.Invoke(new Action(
                             () => activeDirectoryForm.StopLoader()));
                     }
-                    if (schedulerForm != null && schedulerForm.Created)
+                    if (schedulerForm != null && schedulerForm.Created && isSuccess)
                     {
                         schedulerForm.Invoke(new Action(
                             () => schedulerForm.UpdatePreviousDate()));

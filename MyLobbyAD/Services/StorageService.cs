@@ -23,7 +23,7 @@ namespace MyLobbyAD.Services
                 _data = value;
             }
         }
-        private static readonly string FILENAME = "MyLobbyAD.dat";
+        private static readonly string FILENAME = "MyLobbyUserData.dat";
         public static void CreateStorage()
         {
             _isoStore = IsolatedStorageFile.GetStore(

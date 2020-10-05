@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MyLobbyAD.Services;
+using Newtonsoft.Json;
 using System;
 using System.Buffers.Text;
 using System.Collections.Generic;
@@ -37,5 +38,47 @@ namespace MyLobbyAD.Models
 
         [JsonIgnore]
         public object Image { get; set; }
+
+        public bool ShouldSerializeCompany()
+        {
+            if (StorageService.InfoData != null && StorageService.InfoData.PropertiesAD != null)
+            {
+                return StorageService.InfoData.PropertiesAD["Company"];
+            }
+            return true;
+        }
+        public bool ShouldSerializeJobTitle()
+        {
+            if (StorageService.InfoData != null && StorageService.InfoData.PropertiesAD != null)
+            {
+                return StorageService.InfoData.PropertiesAD["JobTitle"];
+            }
+            return true;
+        }
+        public bool ShouldSerializeEmail()
+        {
+            if (StorageService.InfoData != null && StorageService.InfoData.PropertiesAD != null)
+            {
+                return StorageService.InfoData.PropertiesAD["Email"];
+            }
+            return true;
+        }
+        public bool ShouldSerializePhoneSms()
+        {
+            if (StorageService.InfoData != null && StorageService.InfoData.PropertiesAD != null)
+            {
+                return StorageService.InfoData.PropertiesAD["Phone"];
+            }
+            return true;
+        }
+        public bool ShouldSerializePhoneVoice()
+        {
+            if (StorageService.InfoData != null && StorageService.InfoData.PropertiesAD != null)
+            {
+                return StorageService.InfoData.PropertiesAD["Phone"];
+            }
+            return true;
+        }
+
     }
 }

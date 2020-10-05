@@ -73,4 +73,6 @@ C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\obj\Debug\netcoreapp3
 C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.pdb
 C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.genruntimeconfig.cache
 C:\Users\Andrey\source\repos\MyLobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.csprojAssemblyReference.cache
+C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.ErrorForm.resources
+C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.SuccessForm.resources
 C:\Users\maxim.promskyi\source\myLobby\mylobbyAD\MyLobbyAD\obj\Debug\netcoreapp3.1\MyLobbyAD.csprojAssemblyReference.cache
