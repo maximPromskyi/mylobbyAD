@@ -85,7 +85,7 @@ namespace MyLobbyAD
             this.LoginButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LoginButton.HighEmphasis = true;
             this.LoginButton.Icon = null;
-            this.LoginButton.Location = new System.Drawing.Point(582, 524);
+            this.LoginButton.Location = new System.Drawing.Point(600, 611);
             this.LoginButton.Margin = new System.Windows.Forms.Padding(4);
             this.LoginButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.LoginButton.Name = "LoginButton";
@@ -103,10 +103,10 @@ namespace MyLobbyAD
             this.settingPicture.BackColor = System.Drawing.Color.Transparent;
             this.settingPicture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.settingPicture.Image = ((System.Drawing.Image)(resources.GetObject("settingPicture.Image")));
-            this.settingPicture.Location = new System.Drawing.Point(843, 24);
+            this.settingPicture.Location = new System.Drawing.Point(851, 25);
             this.settingPicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.settingPicture.Name = "settingPicture";
-            this.settingPicture.Size = new System.Drawing.Size(33, 33);
+            this.settingPicture.Size = new System.Drawing.Size(37, 35);
             this.settingPicture.TabIndex = 11;
             this.settingPicture.TabStop = false;
             this.settingPicture.Click += new System.EventHandler(this.Setting_Click);
@@ -127,7 +127,7 @@ namespace MyLobbyAD
             this.emailLabel.AutoSize = true;
             this.emailLabel.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.emailLabel.ForeColor = System.Drawing.Color.White;
-            this.emailLabel.Location = new System.Drawing.Point(500, 30);
+            this.emailLabel.Location = new System.Drawing.Point(522, 30);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(45, 18);
             this.emailLabel.TabIndex = 23;
@@ -149,7 +149,7 @@ namespace MyLobbyAD
             this.timerInfo.AutoSize = true;
             this.timerInfo.Depth = 0;
             this.timerInfo.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.timerInfo.Location = new System.Drawing.Point(582, 492);
+            this.timerInfo.Location = new System.Drawing.Point(600, 579);
             this.timerInfo.MouseState = MaterialSkin.MouseState.HOVER;
             this.timerInfo.Name = "timerInfo";
             this.timerInfo.Size = new System.Drawing.Size(65, 19);
@@ -161,7 +161,7 @@ namespace MyLobbyAD
             // 
             this.loader.BackColor = System.Drawing.Color.Transparent;
             this.loader.Image = ((System.Drawing.Image)(resources.GetObject("loader.Image")));
-            this.loader.Location = new System.Drawing.Point(690, 527);
+            this.loader.Location = new System.Drawing.Point(715, 615);
             this.loader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loader.Name = "loader";
             this.loader.Size = new System.Drawing.Size(39, 34);
@@ -175,7 +175,7 @@ namespace MyLobbyAD
             this.previousUpdate.AutoSize = true;
             this.previousUpdate.Depth = 0;
             this.previousUpdate.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.previousUpdate.Location = new System.Drawing.Point(582, 464);
+            this.previousUpdate.Location = new System.Drawing.Point(600, 551);
             this.previousUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             this.previousUpdate.Name = "previousUpdate";
             this.previousUpdate.Size = new System.Drawing.Size(188, 19);
@@ -223,7 +223,7 @@ namespace MyLobbyAD
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 4;
-            this.dataGridView1.Size = new System.Drawing.Size(889, 312);
+            this.dataGridView1.Size = new System.Drawing.Size(918, 395);
             this.dataGridView1.TabIndex = 28;
             // 
             // IsSynchron
@@ -298,7 +298,7 @@ namespace MyLobbyAD
             this.panel1.Location = new System.Drawing.Point(0, 61);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(890, 74);
+            this.panel1.Size = new System.Drawing.Size(919, 74);
             this.panel1.TabIndex = 29;
             // 
             // label8
@@ -328,7 +328,7 @@ namespace MyLobbyAD
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto Medium", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(441, 7);
+            this.label7.Location = new System.Drawing.Point(463, 7);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(152, 18);
             this.label7.TabIndex = 33;
@@ -339,7 +339,7 @@ namespace MyLobbyAD
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(442, 29);
+            this.label6.Location = new System.Drawing.Point(464, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 19);
             this.label6.TabIndex = 32;
@@ -361,7 +361,7 @@ namespace MyLobbyAD
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(603, 4);
+            this.label4.Location = new System.Drawing.Point(625, 4);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 23);
             this.label4.TabIndex = 31;
@@ -382,7 +382,7 @@ namespace MyLobbyAD
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(40, 459);
+            this.label2.Location = new System.Drawing.Point(40, 546);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(199, 23);
             this.label2.TabIndex = 30;
@@ -392,7 +392,7 @@ namespace MyLobbyAD
             // 
             this.IsSyncCompany.AutoSize = true;
             this.IsSyncCompany.Depth = 0;
-            this.IsSyncCompany.Location = new System.Drawing.Point(40, 518);
+            this.IsSyncCompany.Location = new System.Drawing.Point(40, 605);
             this.IsSyncCompany.Margin = new System.Windows.Forms.Padding(0);
             this.IsSyncCompany.MouseLocation = new System.Drawing.Point(-1, -1);
             this.IsSyncCompany.MouseState = MaterialSkin.MouseState.HOVER;
@@ -407,7 +407,7 @@ namespace MyLobbyAD
             // 
             this.IsSyncJobTitle.AutoSize = true;
             this.IsSyncJobTitle.Depth = 0;
-            this.IsSyncJobTitle.Location = new System.Drawing.Point(40, 552);
+            this.IsSyncJobTitle.Location = new System.Drawing.Point(40, 639);
             this.IsSyncJobTitle.Margin = new System.Windows.Forms.Padding(0);
             this.IsSyncJobTitle.MouseLocation = new System.Drawing.Point(-1, -1);
             this.IsSyncJobTitle.MouseState = MaterialSkin.MouseState.HOVER;
@@ -422,7 +422,7 @@ namespace MyLobbyAD
             // 
             this.IsSyncEmail.AutoSize = true;
             this.IsSyncEmail.Depth = 0;
-            this.IsSyncEmail.Location = new System.Drawing.Point(160, 486);
+            this.IsSyncEmail.Location = new System.Drawing.Point(160, 573);
             this.IsSyncEmail.Margin = new System.Windows.Forms.Padding(0);
             this.IsSyncEmail.MouseLocation = new System.Drawing.Point(-1, -1);
             this.IsSyncEmail.MouseState = MaterialSkin.MouseState.HOVER;
@@ -437,7 +437,7 @@ namespace MyLobbyAD
             // 
             this.IsSyncPhone.AutoSize = true;
             this.IsSyncPhone.Depth = 0;
-            this.IsSyncPhone.Location = new System.Drawing.Point(160, 518);
+            this.IsSyncPhone.Location = new System.Drawing.Point(160, 605);
             this.IsSyncPhone.Margin = new System.Windows.Forms.Padding(0);
             this.IsSyncPhone.MouseLocation = new System.Drawing.Point(-1, -1);
             this.IsSyncPhone.MouseState = MaterialSkin.MouseState.HOVER;
@@ -457,7 +457,7 @@ namespace MyLobbyAD
             this.Save.DrawShadows = true;
             this.Save.HighEmphasis = true;
             this.Save.Icon = null;
-            this.Save.Location = new System.Drawing.Point(354, 524);
+            this.Save.Location = new System.Drawing.Point(372, 611);
             this.Save.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Save.MouseState = MaterialSkin.MouseState.HOVER;
             this.Save.Name = "Save";
@@ -476,7 +476,7 @@ namespace MyLobbyAD
             this.IsSyncName.CheckState = System.Windows.Forms.CheckState.Checked;
             this.IsSyncName.Depth = 0;
             this.IsSyncName.Enabled = false;
-            this.IsSyncName.Location = new System.Drawing.Point(40, 486);
+            this.IsSyncName.Location = new System.Drawing.Point(40, 573);
             this.IsSyncName.Margin = new System.Windows.Forms.Padding(0);
             this.IsSyncName.MouseLocation = new System.Drawing.Point(-1, -1);
             this.IsSyncName.MouseState = MaterialSkin.MouseState.HOVER;
@@ -492,7 +492,7 @@ namespace MyLobbyAD
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(890, 607);
+            this.ClientSize = new System.Drawing.Size(919, 683);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.IsSyncPhone);
             this.Controls.Add(this.IsSyncEmail);
