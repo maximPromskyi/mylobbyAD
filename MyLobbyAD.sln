@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLobbyAD", "MyLobbyAD\MyLobbyAD.csproj", "{67AD1146-352A-489A-A4D1-D4F750072882}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{0DDB1BC6-A09C-4A19-B292-246A6B169412}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{62248C8E-BA12-4725-9261-00F577DEA6E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{67AD1146-352A-489A-A4D1-D4F750072882}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67AD1146-352A-489A-A4D1-D4F750072882}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67AD1146-352A-489A-A4D1-D4F750072882}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0DDB1BC6-A09C-4A19-B292-246A6B169412}.Debug|Any CPU.ActiveCfg = Debug
-		{0DDB1BC6-A09C-4A19-B292-246A6B169412}.Release|Any CPU.ActiveCfg = Release
+		{62248C8E-BA12-4725-9261-00F577DEA6E9}.Debug|Any CPU.ActiveCfg = Debug
+		{62248C8E-BA12-4725-9261-00F577DEA6E9}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
