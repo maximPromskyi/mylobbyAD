@@ -10,13 +10,14 @@ using System.Linq;
 using System.Net;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using MaterialSkin.Controls;
 
 namespace MyLobbyAD.Services
 {
     class ApiService
     {
         static readonly HttpClient client = new HttpClient();
-        static readonly string host = "https://eme.my-lobby.com";
+        static readonly string host = "https://admin.my-lobby.com";
 
         public static async Task<LoginInfoModel<LoginSuccess, LoginError>> Login(string email, string password)
         {
@@ -73,17 +74,20 @@ namespace MyLobbyAD.Services
             return JsonConvert.DeserializeObject<LoginInfoModel<EmployeeInfo[], LoginError>>(result);
 
         }
-        public static async Task<bool> UploadUsers()
+        public static async Task<Success> UploadUsers(MaterialProgressBar progressBar = null)
         {
             List<User> users = ActiveDirectory.GetUsers();
             string[] usersId = users.Select(u => u.Id.ToString()).ToArray();
             LoginInfoModel<EmployeeInfo[], LoginError> employeesInfo = await CheckEmployeeById(usersId);
 
+            Success success = new Success();
+
             if (employeesInfo.Error != null)
             {
-                return false;
+                return success;
             }
 
+            int index = 1;
             foreach (User user in users)
             {
                 EmployeeInfo employeeInfo = employeesInfo.Success
@@ -95,10 +99,12 @@ namespace MyLobbyAD.Services
                     {
                         user.EmployeeId = employeeInfo.EmployeeId;
                         await EmployeeUpdate(user);
+                        success.CountUpdateEmployees++;
                     }
                     else
                     {
                         user.EmployeeId = await EmployeeAdd(user);
+                        success.CountAddEmployees++;
                     }
 
                     if (user.Image != null)
@@ -106,8 +112,16 @@ namespace MyLobbyAD.Services
                         await UploadImage(user.Image, user.EmployeeId);
                     }
                 }
+
+                if (progressBar != null)
+                {
+                    progressBar.Value = Convert.ToInt32(Convert.ToDouble(index / users.Count) * 100);
+                }
+
+                index++;
             }
-            return true;
+            success.IsSuccess = true;
+            return success;
         }
     }
 }

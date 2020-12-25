@@ -13,6 +13,7 @@ using MyLobbyAD.Services;
 using MaterialSkin.Controls;
 using System.IO;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace MyLobbyAD
 {
@@ -44,6 +45,7 @@ namespace MyLobbyAD
             IsSyncPhone.Checked = StorageService.InfoData.PropertiesAD["Phone"];
             UpdateTable();
             UpdatePreviousDate();
+            countInfo.Text = $"Total number of users {dataGridView1.Rows.Count}";
         }
         private void UpdateTable()
         {
@@ -79,12 +81,12 @@ namespace MyLobbyAD
         private async void LoginButton_Click(object sender, EventArgs e)
         {
             StartLoader();
-            bool isSuccess = await ApiService.UploadUsers();
-            if (isSuccess)
+            Success success = await ApiService.UploadUsers(ProgressBarUsers);
+            if (success.IsSuccess)
             {
                 StorageService.SetPreviousUpdate(DateTime.Now);
                 UpdatePreviousDate();
-                DisplaySuccess();
+                DisplaySuccess(success);
             }
             else
             {
@@ -93,14 +95,14 @@ namespace MyLobbyAD
             StopLoader();
         }
        
-        public void DisplaySuccess()
+        public void DisplaySuccess(Success success)
         {
-            SuccessForm successForm = new SuccessForm("Users uploaded!");
+            SuccessForm successForm = new SuccessForm($"Users uploaded!\nNew employees added: {success.CountAddEmployees}\nUpdated employees: {success.CountUpdateEmployees}");
             successForm.Show();
         }
         public void DisplayError()
         {
-            ErrorForm errorForm = new ErrorForm("Upload failed!");
+            ErrorForm errorForm = new ErrorForm("Upload failed! Try again.\nIf the error persists,\ntry to re-enter your account");
             errorForm.Show();
         }
         public void StartTimer(string tInfo)

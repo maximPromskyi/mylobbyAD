@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using MyLobbyAD.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -103,8 +104,8 @@ namespace MyLobbyAD.Services
 
                     timer.Change(Timeout.Infinite, Timeout.Infinite);
 
-                    bool isSuccess = await ApiService.UploadUsers();
-                    if (isSuccess)
+                    Success success = await ApiService.UploadUsers();
+                    if (success.IsSuccess)
                     {
                         StorageService.SetPreviousUpdate(NextUpdate);
                     }
@@ -112,13 +113,13 @@ namespace MyLobbyAD.Services
                     timer = new Timer(tm, 1, 0, period);
                     if (activeDirectoryForm != null && activeDirectoryForm.Created)
                     {
-                        if (isSuccess)
+                        if (success.IsSuccess)
                         {
                             activeDirectoryForm.Invoke(new Action(
                                 () =>
                                 {
                                     activeDirectoryForm.UpdatePreviousDate();
-                                    activeDirectoryForm.DisplaySuccess();
+                                    activeDirectoryForm.DisplaySuccess(success);
                                 }));
                         }
                         else
@@ -129,7 +130,7 @@ namespace MyLobbyAD.Services
                         activeDirectoryForm.Invoke(new Action(
                             () => activeDirectoryForm.StopLoader()));
                     }
-                    if (schedulerForm != null && schedulerForm.Created && isSuccess)
+                    if (schedulerForm != null && schedulerForm.Created && success.IsSuccess)
                     {
                         schedulerForm.Invoke(new Action(
                             () => schedulerForm.UpdatePreviousDate()));

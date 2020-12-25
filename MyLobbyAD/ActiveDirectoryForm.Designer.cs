@@ -69,6 +69,8 @@ namespace MyLobbyAD
             this.IsSyncPhone = new MaterialSkin.Controls.MaterialCheckbox();
             this.Save = new MaterialSkin.Controls.MaterialButton();
             this.IsSyncName = new MaterialSkin.Controls.MaterialCheckbox();
+            this.countInfo = new System.Windows.Forms.Label();
+            this.ProgressBarUsers = new MaterialSkin.Controls.MaterialProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.settingPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -85,7 +87,7 @@ namespace MyLobbyAD
             this.LoginButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LoginButton.HighEmphasis = true;
             this.LoginButton.Icon = null;
-            this.LoginButton.Location = new System.Drawing.Point(600, 611);
+            this.LoginButton.Location = new System.Drawing.Point(600, 614);
             this.LoginButton.Margin = new System.Windows.Forms.Padding(4);
             this.LoginButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.LoginButton.Name = "LoginButton";
@@ -149,7 +151,7 @@ namespace MyLobbyAD
             this.timerInfo.AutoSize = true;
             this.timerInfo.Depth = 0;
             this.timerInfo.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.timerInfo.Location = new System.Drawing.Point(600, 579);
+            this.timerInfo.Location = new System.Drawing.Point(600, 582);
             this.timerInfo.MouseState = MaterialSkin.MouseState.HOVER;
             this.timerInfo.Name = "timerInfo";
             this.timerInfo.Size = new System.Drawing.Size(65, 19);
@@ -161,7 +163,7 @@ namespace MyLobbyAD
             // 
             this.loader.BackColor = System.Drawing.Color.Transparent;
             this.loader.Image = ((System.Drawing.Image)(resources.GetObject("loader.Image")));
-            this.loader.Location = new System.Drawing.Point(715, 615);
+            this.loader.Location = new System.Drawing.Point(715, 618);
             this.loader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loader.Name = "loader";
             this.loader.Size = new System.Drawing.Size(39, 34);
@@ -175,7 +177,7 @@ namespace MyLobbyAD
             this.previousUpdate.AutoSize = true;
             this.previousUpdate.Depth = 0;
             this.previousUpdate.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.previousUpdate.Location = new System.Drawing.Point(600, 551);
+            this.previousUpdate.Location = new System.Drawing.Point(600, 554);
             this.previousUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             this.previousUpdate.Name = "previousUpdate";
             this.previousUpdate.Size = new System.Drawing.Size(188, 19);
@@ -382,7 +384,7 @@ namespace MyLobbyAD
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(40, 546);
+            this.label2.Location = new System.Drawing.Point(40, 549);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(199, 23);
             this.label2.TabIndex = 30;
@@ -392,7 +394,7 @@ namespace MyLobbyAD
             // 
             this.IsSyncCompany.AutoSize = true;
             this.IsSyncCompany.Depth = 0;
-            this.IsSyncCompany.Location = new System.Drawing.Point(40, 605);
+            this.IsSyncCompany.Location = new System.Drawing.Point(40, 608);
             this.IsSyncCompany.Margin = new System.Windows.Forms.Padding(0);
             this.IsSyncCompany.MouseLocation = new System.Drawing.Point(-1, -1);
             this.IsSyncCompany.MouseState = MaterialSkin.MouseState.HOVER;
@@ -407,7 +409,7 @@ namespace MyLobbyAD
             // 
             this.IsSyncJobTitle.AutoSize = true;
             this.IsSyncJobTitle.Depth = 0;
-            this.IsSyncJobTitle.Location = new System.Drawing.Point(40, 639);
+            this.IsSyncJobTitle.Location = new System.Drawing.Point(40, 642);
             this.IsSyncJobTitle.Margin = new System.Windows.Forms.Padding(0);
             this.IsSyncJobTitle.MouseLocation = new System.Drawing.Point(-1, -1);
             this.IsSyncJobTitle.MouseState = MaterialSkin.MouseState.HOVER;
@@ -422,7 +424,7 @@ namespace MyLobbyAD
             // 
             this.IsSyncEmail.AutoSize = true;
             this.IsSyncEmail.Depth = 0;
-            this.IsSyncEmail.Location = new System.Drawing.Point(160, 573);
+            this.IsSyncEmail.Location = new System.Drawing.Point(160, 576);
             this.IsSyncEmail.Margin = new System.Windows.Forms.Padding(0);
             this.IsSyncEmail.MouseLocation = new System.Drawing.Point(-1, -1);
             this.IsSyncEmail.MouseState = MaterialSkin.MouseState.HOVER;
@@ -437,7 +439,7 @@ namespace MyLobbyAD
             // 
             this.IsSyncPhone.AutoSize = true;
             this.IsSyncPhone.Depth = 0;
-            this.IsSyncPhone.Location = new System.Drawing.Point(160, 605);
+            this.IsSyncPhone.Location = new System.Drawing.Point(160, 608);
             this.IsSyncPhone.Margin = new System.Windows.Forms.Padding(0);
             this.IsSyncPhone.MouseLocation = new System.Drawing.Point(-1, -1);
             this.IsSyncPhone.MouseState = MaterialSkin.MouseState.HOVER;
@@ -457,7 +459,7 @@ namespace MyLobbyAD
             this.Save.DrawShadows = true;
             this.Save.HighEmphasis = true;
             this.Save.Icon = null;
-            this.Save.Location = new System.Drawing.Point(372, 611);
+            this.Save.Location = new System.Drawing.Point(372, 614);
             this.Save.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Save.MouseState = MaterialSkin.MouseState.HOVER;
             this.Save.Name = "Save";
@@ -476,7 +478,7 @@ namespace MyLobbyAD
             this.IsSyncName.CheckState = System.Windows.Forms.CheckState.Checked;
             this.IsSyncName.Depth = 0;
             this.IsSyncName.Enabled = false;
-            this.IsSyncName.Location = new System.Drawing.Point(40, 573);
+            this.IsSyncName.Location = new System.Drawing.Point(40, 576);
             this.IsSyncName.Margin = new System.Windows.Forms.Padding(0);
             this.IsSyncName.MouseLocation = new System.Drawing.Point(-1, -1);
             this.IsSyncName.MouseState = MaterialSkin.MouseState.HOVER;
@@ -487,12 +489,33 @@ namespace MyLobbyAD
             this.IsSyncName.Text = "Name";
             this.IsSyncName.UseVisualStyleBackColor = true;
             // 
+            // countInfo
+            // 
+            this.countInfo.AutoSize = true;
+            this.countInfo.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.countInfo.Location = new System.Drawing.Point(357, 549);
+            this.countInfo.Name = "countInfo";
+            this.countInfo.Size = new System.Drawing.Size(211, 23);
+            this.countInfo.TabIndex = 37;
+            this.countInfo.Text = "Total number of users 0";
+            // 
+            // ProgressBarUsers
+            // 
+            this.ProgressBarUsers.Depth = 0;
+            this.ProgressBarUsers.Location = new System.Drawing.Point(1, 700);
+            this.ProgressBarUsers.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ProgressBarUsers.Name = "ProgressBarUsers";
+            this.ProgressBarUsers.Size = new System.Drawing.Size(918, 5);
+            this.ProgressBarUsers.TabIndex = 38;
+            // 
             // ActiveDirectoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(919, 683);
+            this.ClientSize = new System.Drawing.Size(919, 709);
+            this.Controls.Add(this.ProgressBarUsers);
+            this.Controls.Add(this.countInfo);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.IsSyncPhone);
             this.Controls.Add(this.IsSyncEmail);
@@ -555,5 +578,7 @@ namespace MyLobbyAD
         private DataGridViewTextBoxColumn UserId;
         private MaterialSkin.Controls.MaterialButton Save;
         private MaterialSkin.Controls.MaterialCheckbox IsSyncName;
+        private Label countInfo;
+        private MaterialSkin.Controls.MaterialProgressBar ProgressBarUsers;
     }
 }

@@ -66,7 +66,7 @@ namespace MyLobbyAD
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(63, 105);
+            this.button1.Location = new System.Drawing.Point(63, 147);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(159, 32);
             this.button1.TabIndex = 5;
@@ -94,7 +94,7 @@ namespace MyLobbyAD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(275, 147);
+            this.ClientSize = new System.Drawing.Size(275, 191);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.successLabel);
             this.Controls.Add(this.panel1);
